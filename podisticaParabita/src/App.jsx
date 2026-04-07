@@ -5,6 +5,7 @@ import Sponsor from './pages/Sponsor';
 import Navbar from './components/Navbar';
 import Walking from './pages/Walking';
 import Calendario from './pages/Calendario';
+import ScalataVeneri from './pages/ScalataVeneri';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/walking" element={<Walking />} />
         <Route path="/gare" element={<Calendario />} />
+        <Route path="/scalata" element={<ScalataVeneri />} />
       </Routes>
     </Router>
   );

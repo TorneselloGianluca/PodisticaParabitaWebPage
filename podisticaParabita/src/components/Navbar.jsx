@@ -9,7 +9,7 @@ const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'Gare', href: '/gare' },
     { name: 'Risultati', href: '/risultati' },
-    { name: 'Scalata delle Veneri 2026', href: '#scalata', highlight: true },
+    { name: 'Scalata delle Veneri 2026', href: '/scalata', highlight: true },
     { name: 'Sponsor', href: '/sponsor' },
     { name: 'Walking', href: '/walking' },
   ];

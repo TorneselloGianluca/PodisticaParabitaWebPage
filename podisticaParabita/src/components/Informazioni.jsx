@@ -9,11 +9,13 @@ import 'swiper/css/pagination';
 import storia1 from '../assets/immagini_storiche/storia1.jpeg';
 import storia2 from '../assets/immagini_storiche/storia2.png';
 import storia3 from '../assets/immagini_storiche/storia3.png';
+import storia4 from '../assets/immagini_storiche/storia4.png';
 
 const Informazioni = () => {
   const fotoStoriche = [
     { url: storia1, caption: "Gara storica anni '80 - Le origini del mito" },
     { url: storia3, caption: "Scalata delle Veneri 2015" },
+    { url: storia4, caption: "Podistica Parabita in gara - Anni '90" },
   ];
 
   return (
