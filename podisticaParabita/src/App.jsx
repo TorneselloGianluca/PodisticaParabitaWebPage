@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Walking from './pages/Walking';
 import Calendario from './pages/Calendario';
 import ScalataVeneri from './pages/ScalataVeneri';
+import CurraturiPage from './pages/CurraturiPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/walking" element={<Walking />} />
         <Route path="/gare" element={<Calendario />} />
         <Route path="/scalata" element={<ScalataVeneri />} />
+        <Route path="/curraturi" element={<CurraturiPage />} /> 
       </Routes>
     </Router>
   );

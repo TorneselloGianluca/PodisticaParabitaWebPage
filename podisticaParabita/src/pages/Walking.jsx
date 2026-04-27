@@ -4,6 +4,7 @@ import { ChevronRight, Footprints, Map, Users, Heart, ArrowRight, Activity } fro
 import WalkingBg from '../assets/walking.png'; 
 import Contatti from '../components/Contatti';
 
+
 const Walking = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900">

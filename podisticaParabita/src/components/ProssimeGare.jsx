@@ -1,49 +1,56 @@
 import React from 'react';
-import { Calendar, MapPin, Clock, Trophy, ArrowRight } from 'lucide-react';
+import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
+
+// 1. IMPORTA IL TUO PDF (Assicurati che il nome del file sia corretto)
+import CalendarioPDF from '../assets/calendario.pdf';
 
 import Calimera from '../assets/calimera.jpg';
 import Pista from '../assets/pista.png';
 import Ruffano from '../assets/ruffano.webp';
+import Otranto from '../assets/otranto.webp';
+import Lecce from '../assets/lecce.webp';
+import Spongano from '../assets/spongano.jpg';
+import Borgagne from '../assets/prossime_gare/borgagne.jpg';
 
 const ProssimeGare = () => {
  
   const gareData = [
     {
       id: 1,
-      titolo: "12^Memorial Marcello ed Osvaldo Longo",
-      data: "2026-04-12",
-      luogo: "Calimera, LE",
-      ora: "08:30",
-      tipo: "10km",
-      immagine: Calimera,
+      titolo: "Campionati Provinciali di Società Esordienti",
+      data: "2026-04-26",
+      luogo: "Lecce, LE",
+      ora: "09:00",
+      tipo: "Pista",
+      immagine: Lecce,
       iscrizioniAperte: true
     },
     {
       id: 2,
-      titolo: "Running in Salento in Pista",
-      data: "2026-04-16",
-      luogo: "Lecce, LE",
-      ora: "09:00",
-      tipo: "Pista",
-      immagine: Pista,
+      titolo: "1^ Mezza Maratona Terre a Levante",
+      data: "2026-04-26",
+      luogo: "Spongano, LE",
+      ora: "07:30",
+      tipo: "22KM",
+      immagine: Spongano,
       iscrizioniAperte: true
     },
     {
       id: 3,
-      titolo: "7^ Ecotrail delle Serre Salentine",
-      data: "2026-04-20",
-      luogo: "Ruffano, LE",
-      ora: "07:30",
-      tipo: "Trail 15km",
-      immagine: Ruffano,
+      titolo: "43^ Marcialonga di Primavera",
+      data: "2026-05-01",
+      luogo: "Borgagne, LE",
+      ora: "08:30",
+      tipo: "11KM",
+      immagine: Borgagne,
       iscrizioniAperte: true
     }
   ];
 
-  // Ordinamento cronologico (dalla data più vicina alla più lontana)
+  // Ordinamento cronologico
   const gareOrdinate = [...gareData].sort((a, b) => new Date(a.data) - new Date(b.data));
 
-  // Funzione per formattare la data in italiano (es: 20 Apr 2026)
+  // Formattazione data in italiano
   const formattaData = (dataStr) => {
     return new Date(dataStr).toLocaleDateString('it-IT', {
       day: 'numeric',
@@ -64,9 +71,16 @@ const ProssimeGare = () => {
             </h2>
             <p className="text-slate-500 mt-2">Segna in calendario e preparati a correre.</p>
           </div>
-          <button className="hidden md:flex items-center gap-2 text-blue-600 font-bold hover:underline">
+          
+          {/* LINK AL PDF: Sostituito il button con un tag <a> */}
+          <a 
+            href={CalendarioPDF} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-2 text-blue-600 font-bold hover:underline cursor-pointer"
+          >
             Vedi tutto il calendario <ArrowRight size={18} />
-          </button>
+          </a>
         </div>
 
         {/* Griglia delle Gare */}
@@ -107,7 +121,7 @@ const ProssimeGare = () => {
                   </div>
                 </div>
 
-                {/* Pulsante Azione */}
+                {/* Pulsante Iscrizione */}
                 <button 
                   disabled={!gara.iscrizioniAperte}
                   className={`w-full py-3 rounded-xl font-bold transition-all ${
@@ -121,6 +135,18 @@ const ProssimeGare = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Pulsante visibile solo su mobile (opzionale) */}
+        <div className="mt-8 md:hidden">
+          <a 
+            href={CalendarioPDF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center items-center gap-2 text-blue-600 font-bold p-4 bg-blue-50 rounded-xl"
+          >
+            Vedi tutto il calendario <ArrowRight size={18} />
+          </a>
         </div>
       </div>
     </section>
