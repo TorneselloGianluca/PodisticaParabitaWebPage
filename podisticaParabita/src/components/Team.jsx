@@ -1,3 +1,4 @@
+import React from 'react';
 import VincenzoCataldo from '../assets/VincenzoCataldo.png';
 import PierluigiToma from '../assets/PierluigiToma.png';
 import AndreaMarsano from '../assets/AndreaMarsano.png';
@@ -9,110 +10,57 @@ import CataldoBiagio from '../assets/CataldoBiagio.png';
 import ProvenzanoGiuseppe from '../assets/GiuseppeProvenzano.png';
 import NicolettiLuigi from '../assets/Nicoletti.png';
 
+const Team = () => {
+  const staff = [
+    { nome: "Antonio Tornesello", ruolo: "Presidente", img: AntonioTornesello },
+    { nome: "Cataldo Biagio", ruolo: "Vice Presidente", img: CataldoBiagio },
+    { nome: "Provenzano Giuseppe", ruolo: "Vicepresidente", img: ProvenzanoGiuseppe },
+    { nome: "Cataldo Vincenzo", ruolo: "Consigliere", img: VincenzoCataldo },
+    { nome: "Nicoletti Luigi", ruolo: "Consigliere", img: NicolettiLuigi },
+    { nome: "Toma Pierluigi", ruolo: "Segretario", img: PierluigiToma },
+    { nome: "Marsano Andrea", ruolo: "Consigliere", img: AndreaMarsano },
+    { nome: "Leopizzi Antonio", ruolo: "Presidente Onorario", img: AntonioLeopizzi },
+    { nome: "Margarito Antonio", ruolo: "Tecnico Federale", img: AntonioMargarito },
+    { nome: "Piera Pastore", ruolo: "Tecnico Federale", img: PieraPastore },
+  ];
 
-function Team() {
   return (
-    <div class="bg-gray-900 py-24 sm:py-32">
-  <div class="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
-    <div class="max-w-xl">
-      <h2 class="text-3xl font-semibold tracking-tight text-pretty text-white sm:text-4xl">IL NOSTRO TEAM</h2>
-      <p class="mt-6 text-lg/8 text-gray-400">Non ci unisce solo un pettorale, ma ogni singolo chilometro percorso insieme sotto il sole del Salento. Il nostro team è nato dalla passione pura per l'atletica e cresce ogni giorno grazie all'impegno di chi non teme la sveglia all'alba o la fatica della salita. Corriamo per superare i nostri limiti, ma soprattutto per condividere la gioia di un traguardo raggiunto insieme. Ogni goccia di sudore è il nostro modo di onorare lo sport e il nostro territorio.</p>
-    </div>
-    <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
-        <div class="flex items-center gap-x-6">
-          <img src={AntonioTornesello} alt="Antonio Tornesello" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Antonio Tornesello</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Presidente</p>
+    <div className="bg-slate-900 py-20 md:py-32 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* Testo Laterale */}
+          <div className="lg:col-span-4 text-center lg:text-left">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white uppercase">
+              Il Nostro <br className="hidden lg:block"/> <span className="text-blue-500">Team</span>
+            </h2>
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-gray-400">
+              Non ci unisce solo un pettorale, ma ogni singolo chilometro percorso insieme sotto il sole del Salento. Corriamo per superare i nostri limiti e condividere la gioia del traguardo.
+            </p>
           </div>
-        </div>
-      <li>
-        <div class="flex items-center gap-x-6">
-          <img src={CataldoBiagio} alt="Cataldo Biagio" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Cataldo Biagio</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Vice Presidente</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex items-center gap-x-6">
-          <img src={ProvenzanoGiuseppe} alt="Provenzano Giuseppe" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Provenzano Giuseppe</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Vicepresidente</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex items-center gap-x-6">
-          <img src={VincenzoCataldo} alt="Cataldo Vincenzo" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Cataldo Vincenzo</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Consigliere</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex items-center gap-x-6">
-          <img src={NicolettiLuigi} alt="Nicoletti Luigi" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Nicoletti Luigi</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Consigliere</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex items-center gap-x-6">
-          <img src={PierluigiToma} alt="Toma Pierluigi" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Toma Pierluigi</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Segretario</p>
-          </div>
-        </div>
-      </li>
-        <li>
-        <div class="flex items-center gap-x-6">
-          <img src={AndreaMarsano} alt="Marsano Andrea" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Marsano Andrea</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Consigliere</p>
-          </div>
-        </div>
-      </li>
-              <li>
-        <div class="flex items-center gap-x-6">
-          <img src={AntonioLeopizzi} alt="Leopizzi Antonio" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Leopizzi Antonio</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Presidente Onorario</p>
-          </div>
-        </div>
-      </li>
-                    <li>
-        <div class="flex items-center gap-x-6">
-          <img src={AntonioMargarito} alt="Margarito Antonio" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Margarito Antonio</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Tecnico Federale</p>
-          </div>
-        </div>
-      </li>
-                    <li>
-        <div class="flex items-center gap-x-6">
-          <img src={PieraPastore} alt="Pastore Piera" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
-          <div>
-            <h3 class="text-base/7 font-semibold tracking-tight text-white">Pastore Piera</h3>
-            <p class="text-sm/6 font-semibold text-indigo-400">Tecnico Federale</p>
-          </div>
-        </div>
-      </li>
-      
-    </ul>
-  </div>
-  
-</div>
 
+          {/* Griglia Membri: 1 colonna su mobile, 2 su tablet/desktop */}
+          <div className="lg:col-span-8">
+            <ul role="list" className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+              {staff.map((membro, index) => (
+                <li key={index} className="flex items-center gap-x-6 bg-white/5 p-4 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                  <img 
+                    src={membro.img} 
+                    alt={membro.nome} 
+                    className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-2 border-blue-500/30" 
+                  />
+                  <div>
+                    <h3 className="text-base md:text-lg font-bold text-white tracking-tight">{membro.nome}</h3>
+                    <p className="text-sm font-semibold text-blue-400 uppercase tracking-widest">{membro.ruolo}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
   );
 }
 

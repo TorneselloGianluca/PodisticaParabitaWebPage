@@ -27,7 +27,7 @@ const Navbar = () => {
     { name: 'Scalata delle Veneri', href: '/scalata', highlight: true, icon: <Star size={20} /> },
     { name: 'Sponsor', href: '/sponsor', icon: <Info size={20} /> },
     { name: 'Walking', href: '/walking', icon: <Footprints size={20} /> },
-    { name: 'Curraturi', href: '/curraturi', icon: <Footprints size={20} /> }   
+    { name: 'Curraturi', href: '/curraturia', icon: <Footprints size={20} /> }   
   ];
 
   return (

@@ -1,13 +1,9 @@
 import React from 'react';
 import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
 
-// 1. IMPORTA IL TUO PDF (Assicurati che il nome del file sia corretto)
+// IMPORTA IL TUO PDF
 import CalendarioPDF from '../assets/calendario.pdf';
 
-import Calimera from '../assets/calimera.jpg';
-import Pista from '../assets/pista.png';
-import Ruffano from '../assets/ruffano.webp';
-import Otranto from '../assets/otranto.webp';
 import Lecce from '../assets/lecce.webp';
 import Spongano from '../assets/spongano.jpg';
 import Borgagne from '../assets/prossime_gare/borgagne.jpg';
@@ -47,10 +43,8 @@ const ProssimeGare = () => {
     }
   ];
 
-  // Ordinamento cronologico
   const gareOrdinate = [...gareData].sort((a, b) => new Date(a.data) - new Date(b.data));
 
-  // Formattazione data in italiano
   const formattaData = (dataStr) => {
     return new Date(dataStr).toLocaleDateString('it-IT', {
       day: 'numeric',
@@ -60,10 +54,10 @@ const ProssimeGare = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Intestazione Sezione */}
+        {/* Intestazione */}
         <div className="flex justify-between items-end mb-10">
           <div>
             <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter">
@@ -72,7 +66,6 @@ const ProssimeGare = () => {
             <p className="text-slate-500 mt-2">Segna in calendario e preparati a correre.</p>
           </div>
           
-          {/* LINK AL PDF: Sostituito il button con un tag <a> */}
           <a 
             href={CalendarioPDF} 
             target="_blank" 
@@ -83,10 +76,13 @@ const ProssimeGare = () => {
           </a>
         </div>
 
-        {/* Griglia delle Gare */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* CONTENITORE MODIFICATO: Flex su mobile, Grid su desktop */}
+        <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-x-visible md:pb-0 scrollbar-hide">
           {gareOrdinate.map((gara) => (
-            <div key={gara.id} className="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden">
+            <div 
+              key={gara.id} 
+              className="min-w-[85%] sm:min-w-[45%] md:min-w-0 snap-center group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden"
+            >
               
               {/* Immagine Gara */}
               <div className="relative h-48 overflow-hidden">
@@ -102,7 +98,7 @@ const ProssimeGare = () => {
 
               {/* Contenuto Scheda */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
                   {gara.titolo}
                 </h3>
                 
@@ -121,7 +117,6 @@ const ProssimeGare = () => {
                   </div>
                 </div>
 
-                {/* Pulsante Iscrizione */}
                 <button 
                   disabled={!gara.iscrizioniAperte}
                   className={`w-full py-3 rounded-xl font-bold transition-all ${
@@ -137,13 +132,13 @@ const ProssimeGare = () => {
           ))}
         </div>
 
-        {/* Pulsante visibile solo su mobile (opzionale) */}
-        <div className="mt-8 md:hidden">
+        {/* Link Mobile */}
+        <div className="mt-4 md:hidden text-center">
           <a 
             href={CalendarioPDF}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-center items-center gap-2 text-blue-600 font-bold p-4 bg-blue-50 rounded-xl"
+            className="inline-flex items-center gap-2 text-blue-600 font-bold p-2"
           >
             Vedi tutto il calendario <ArrowRight size={18} />
           </a>
