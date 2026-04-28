@@ -17,6 +17,7 @@ import LogoSection from '../components/LogoSection';
 import Contatti from '../components/Contatti';
 import Video from '../assets/video.mp4';
 import CaroselloImmagini from '../components/CaroselloImmagini';
+import Social from '../components/Social';
 
 const Homepage = () => {
   return (
@@ -56,7 +57,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* === CHI SIAMO INTRO (Reinserita) === */}
+      {/* === CHI SIAMO INTRO === */}
       <section className="py-16 md:py-24 px-6 bg-white relative">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
@@ -83,85 +84,7 @@ const Homepage = () => {
 
       <Informazioni />
 
-      {/* === SOCIAL & LINKS SECTION === */}
-{/* === SOCIAL & LINKS SECTION - SFONDO BIANCO E FOTO SFOCATE === */}
-      <section className="bg-white py-20 px-4 md:px-6 relative z-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          
-          {/* Intestazione Sezione */}
-          <div className="mb-12 text-center md:text-left">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter leading-none">
-              Social & <span className="text-blue-600">Pagina Fidal</span>
-            </h2>
-            <p className="text-slate-500 mt-4 font-medium">Rimani connesso con la nostra community.</p>
-          </div>
 
-          {/* Layout: Scroll su mobile, Griglia su Desktop */}
-          <div className="flex overflow-x-auto pb-12 gap-6 snap-x snap-mandatory md:grid md:grid-cols-3 md:overflow-visible md:pb-0 scrollbar-hide">
-            
-            {/* Instagram */}
-            <a href="https://www.instagram.com/podisticaparabita" target="_blank" rel="noopener noreferrer" 
-               className="relative group min-w-[300px] md:min-w-0 h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200 snap-center shrink-0 transition-transform hover:-translate-y-2">
-              {/* Foto di Sfondo Sfocata */}
-              <img src="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?q=80&w=800" alt="Instagram BG" 
-                   className="absolute inset-0 w-full h-full object-cover blur-[1px] group-hover:blur-0 group-hover:scale-110 transition-all duration-700" />
-              {/* Overlay Bianco per Testo */}
-              <div className="absolute inset-0 bg-white/80 group-hover:bg-white/70 transition-colors" />
-              
-              {/* Contenuto */}
-              <div className="relative h-full p-10 flex flex-col items-center md:items-start">
-                <div className="text-pink-600 mb-8 bg-white p-5 rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                  <Share2 size={32} />
-                </div>
-                <h3 className="text-2xl font-black uppercase tracking-tighter mb-3 text-slate-900">Instagram</h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">Seguici per foto, video e aggiornamenti live dalle gare.</p>
-                <span className="mt-auto bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg">
-                  Vedi Profilo <ChevronRight size={14} />
-                </span>
-              </div>
-            </a>
-
-            {/* Facebook */}
-            <a href="https://www.facebook.com/podisticaparabita" target="_blank" rel="noopener noreferrer" 
-               className="relative group min-w-[300px] md:min-w-0 h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200 snap-center shrink-0 transition-transform hover:-translate-y-2">
-              <img src="https://images.unsplash.com/photo-1461896756913-64752638a410?q=80&w=800" alt="Facebook BG" 
-                   className="absolute inset-0 w-full h-full object-cover blur-[1px] group-hover:blur-0 group-hover:scale-110 transition-all duration-700" />
-              <div className="absolute inset-0 bg-white/80 group-hover:bg-white/70 transition-colors" />
-              
-              <div className="relative h-full p-10 flex flex-col items-center md:items-start">
-                <div className="text-blue-600 mb-8 bg-white p-5 rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                  <Globe size={32} />
-                </div>
-                <h3 className="text-2xl font-black uppercase tracking-tighter mb-3 text-slate-900">Facebook</h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">Unisciti alla nostra community e rimani aggiornato sugli eventi.</p>
-                <span className="mt-auto bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg">
-                  Visita Pagina <ChevronRight size={14} />
-                </span>
-              </div>
-            </a>
-
-            {/* Pagina FIDAL */}
-            <a href="https://www.fidal.it/societa/A.S.D.-PODISTICA-PARABITA/LE605" target="_blank" rel="noopener noreferrer" 
-               className="relative group min-w-[300px] md:min-w-0 h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200 snap-center shrink-0 transition-transform hover:-translate-y-2">
-              <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=800" alt="Fidal BG" 
-                   className="absolute inset-0 w-full h-full object-cover blur-[1px] group-hover:blur-0 group-hover:scale-110 transition-all duration-700" />
-              <div className="absolute inset-0 bg-white/80 group-hover:bg-white/70 transition-colors" />
-              
-              <div className="relative h-full p-10 flex flex-col items-center md:items-start">
-                <div className="text-blue-800 mb-8 bg-white p-5 rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                  <Award size={32} />
-                </div>
-                <h3 className="text-2xl font-black uppercase tracking-tighter mb-3 text-slate-900">Pagina FIDAL</h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">Controlla i risultati ufficiali e la nostra scheda tecnica federale.</p>
-                <span className="mt-auto bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg">
-                  Scheda Tecnica <ChevronRight size={14} />
-                </span>
-              </div>
-            </a>
-
-          </div>
-        </div>
-      </section>
 
       {/* Video Section */}
       <section className="py-12 px-4 md:px-8">
@@ -180,6 +103,7 @@ const Homepage = () => {
 
       <ProssimeGare />
       <Team />
+      <Social />
       <Contatti />
     </div>
   );
