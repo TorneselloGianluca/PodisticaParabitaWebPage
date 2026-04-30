@@ -24,15 +24,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-              run: |
-                rm -rf node_modules package-lock.json
-                npm install
-                npm install @tailwindcss/vite tailwindcss lightningcss
-
-      - name: Build
+      - name: Install and Build
         run: |
-          # Eseguiamo il build di Vite
+          npm install
           npm run build
 
       - name: Upload artifact
