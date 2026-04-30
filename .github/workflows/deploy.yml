@@ -22,13 +22,20 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Usiamo la 20 che è stabilissima per i build
+          node-version: 20
+          # Rimuoviamo la cache per evitare conflitti tra versioni Mac e Linux
+          cache: false 
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          # Pulizia forzata per garantire che npm riscarichi i binari Linux
+          rm -rf node_modules package-lock.json
+          npm install --include=dev --include=optional
 
       - name: Build
-        run: npm run build
+        run: |
+          # Eseguiamo il build di Vite
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
