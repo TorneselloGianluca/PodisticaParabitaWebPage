@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: podisticaParabita # Assicurati che sia il nome esatto della cartella
+        working-directory: podisticaParabita
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,12 +24,17 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install and Build
+      - name: Install dependencies
         run: |
-          # Forza l'installazione pulita ignorando ogni residuo
-          npm install --include=optional
-          # Lanciamo il build
-          npm run build
+          # 1. Rimuoviamo tutto per sicurezza
+          rm -rf node_modules package-lock.json
+          # 2. Installazione standard
+          npm install
+          # 3. FORZATURA MANUALE del modulo che continua a mancare
+          npm install @lightningcss/linux-x64-gnu
+
+      - name: Build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
