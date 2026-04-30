@@ -2,7 +2,7 @@ name: Deploy Vite Site
 
 on:
   push:
-    branches: ["main"] # Cambia in "master" se il tuo branch principale si chiama così
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 # Aggiornato alla versione 24 per evitare il warning
           cache: 'npm'
 
       - name: Install dependencies
@@ -31,7 +31,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Vite di default crea i file pronti nella cartella dist
           path: ./dist
 
   deploy:
