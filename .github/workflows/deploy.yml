@@ -22,16 +22,10 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20 # Usiamo la 20 che è stabilissima per i build
 
       - name: Install dependencies
-        run: |
-          # 1. Rimuoviamo tutto per sicurezza
-          rm -rf node_modules package-lock.json
-          # 2. Installazione standard
-          npm install
-          # 3. FORZATURA MANUALE del modulo che continua a mancare
-          npm install @lightningcss/linux-x64-gnu
+        run: npm install
 
       - name: Build
         run: npm run build
