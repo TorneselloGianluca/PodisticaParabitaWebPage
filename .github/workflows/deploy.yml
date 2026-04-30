@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: podisticaParabita # <-- DICIAMO A GITHUB DI ENTRARE QUI
+        working-directory: podisticaParabita
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,10 +24,11 @@ jobs:
         with:
           node-version: 24
           cache: 'npm'
-          cache-dependency-path: podisticaParabita/package-lock.json # <-- IMPORTANTE
+          cache-dependency-path: podisticaParabita/package-lock.json
 
       - name: Install dependencies
-        run: npm install
+        # Forziamo l'installazione delle dipendenze per l'architettura Linux di GitHub
+        run: npm install --include=optional --platform=linux --arch=x64
 
       - name: Build
         run: npm run build
@@ -35,8 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Indichiamo il percorso corretto per la cartella dist
-          path: podisticaParabita/dist 
+          path: podisticaParabita/dist
 
   deploy:
     environment:
