@@ -23,13 +23,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          # Rimuoviamo la cache temporaneamente per forzare un'installazione pulita
-          # cache: 'npm' 
 
       - name: Install dependencies
         run: |
-          # Forza l'installazione dei binari per Linux x64
-          npm install --include=optional --platform=linux --arch=x64
+          # Eliminiamo eventuali residui che bloccano il build
+          rm -rf node_modules package-lock.json
+          npm install --include=optional
 
       - name: Build
         run: npm run build
