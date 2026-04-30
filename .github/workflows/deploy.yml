@@ -26,9 +26,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # Eliminiamo eventuali residui che bloccano il build
+          # Pulizia profonda
           rm -rf node_modules package-lock.json
-          npm install --include=optional
+          # Installazione standard con flag per Linux
+          npm install --include=optional --os=linux --cpu=x64
+          # FORZATURA: Installiamo manualmente il modulo che il log segnala come mancante
+          npm install @lightningcss/linux-x64-gnu
 
       - name: Build
         run: npm run build
