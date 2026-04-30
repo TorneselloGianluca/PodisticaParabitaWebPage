@@ -23,12 +23,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'npm'
-          cache-dependency-path: podisticaParabita/package-lock.json
+          # Rimuoviamo la cache temporaneamente per forzare un'installazione pulita
+          # cache: 'npm' 
 
       - name: Install dependencies
-        # Forziamo l'installazione delle dipendenze per l'architettura Linux di GitHub
-        run: npm install --include=optional --platform=linux --arch=x64
+        run: |
+          # Forza l'installazione dei binari per Linux x64
+          npm install --include=optional --platform=linux --arch=x64
 
       - name: Build
         run: npm run build
