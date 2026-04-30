@@ -25,10 +25,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: |
-          # Pulizia forzata per garantire che npm riscarichi i binari Linux
-          rm -rf node_modules package-lock.json
-          npm install --include=dev --include=optional
+              run: |
+                rm -rf node_modules package-lock.json
+                npm install
+                npm install @tailwindcss/vite tailwindcss lightningcss
 
       - name: Build
         run: |
