@@ -12,6 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: podisticaParabita # <-- DICIAMO A GITHUB DI ENTRARE QUI
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,8 +22,9 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24 # Aggiornato alla versione 24 per evitare il warning
+          node-version: 24
           cache: 'npm'
+          cache-dependency-path: podisticaParabita/package-lock.json # <-- IMPORTANTE
 
       - name: Install dependencies
         run: npm install
@@ -31,7 +35,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          # Indichiamo il percorso corretto per la cartella dist
+          path: podisticaParabita/dist 
 
   deploy:
     environment:
