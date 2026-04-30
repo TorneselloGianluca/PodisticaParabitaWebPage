@@ -23,8 +23,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # Rimuoviamo la cache per evitare conflitti tra versioni Mac e Linux
-          cache: false 
 
       - name: Install dependencies
         run: |
