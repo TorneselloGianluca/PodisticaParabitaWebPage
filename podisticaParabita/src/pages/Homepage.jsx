@@ -15,7 +15,7 @@ import Podistica from '../assets/podistica.png';
 import Informazioni from '../components/Informazioni';
 import LogoSection from '../components/LogoSection';
 import Contatti from '../components/Contatti';
-import Video from '../assets/video.mp4';
+import Video from '../assets/video1.mp4';
 import CaroselloImmagini from '../components/CaroselloImmagini';
 import Social from '../components/Social';
 
