@@ -10,18 +10,23 @@ import CataldoBiagio from '../assets/CataldoBiagio.png';
 import ProvenzanoGiuseppe from '../assets/GiuseppeProvenzano.png';
 import NicolettiLuigi from '../assets/Nicoletti.png';
 
+import TommasoNicoletti from '../assets/TommasoNicoletti.png';
+import FrancescoMauro from '../assets/FrancescoMauro.png';
+
 const Team = () => {
   const staff = [
     { nome: "Antonio Tornesello", ruolo: "Presidente", img: AntonioTornesello },
     { nome: "Cataldo Biagio", ruolo: "Vice Presidente", img: CataldoBiagio },
     { nome: "Provenzano Giuseppe", ruolo: "Vicepresidente", img: ProvenzanoGiuseppe },
     { nome: "Cataldo Vincenzo", ruolo: "Consigliere", img: VincenzoCataldo },
-    { nome: "Nicoletti Luigi", ruolo: "Consigliere", img: NicolettiLuigi },
+    { nome: "Nicoletti Luigi", ruolo: "Collaboratore", img: NicolettiLuigi },
     { nome: "Toma Pierluigi", ruolo: "Segretario", img: PierluigiToma },
     { nome: "Marsano Andrea", ruolo: "Consigliere", img: AndreaMarsano },
     { nome: "Leopizzi Antonio", ruolo: "Presidente Onorario", img: AntonioLeopizzi },
     { nome: "Margarito Antonio", ruolo: "Tecnico Federale", img: AntonioMargarito },
     { nome: "Piera Pastore", ruolo: "Tecnico Federale", img: PieraPastore },
+    { nome: "Tommaso Nicoletti", ruolo: "Consigliere", img: TommasoNicoletti },
+    { nome: "Francesco Mauro", ruolo: "Medico sociale", img: FrancescoMauro },
   ];
 
   return (

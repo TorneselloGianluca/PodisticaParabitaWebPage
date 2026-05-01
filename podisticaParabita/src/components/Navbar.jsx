@@ -5,7 +5,6 @@ import { Menu, X, Home, Trophy, BarChart3, Star, Footprints, Info, MessageCircle
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Blocca lo scroll del sito quando il menu è aperto
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -19,10 +18,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/', icon: <Home size={24} /> },
-    { name: 'Gare', href: '/gare', icon: <Trophy size={24} /> },
     { name: 'Risultati', href: '/risultati', icon: <BarChart3 size={24} /> },
-    { name: 'Scalata delle Veneri', href: '/scalata', icon: <Star size={24} /> }, // Rimossa evidenziazione
+    { name: 'Scalata delle Veneri', href: '/scalata', icon: <Star size={24} /> },
     { name: 'Sponsor', href: '/sponsor', icon: <Info size={24} /> },
+    { name: 'Migliori Momenti', href: '/miglioriMomenti', icon: <Info size={24} /> },
     { name: 'Walking', href: '/walking', icon: <Footprints size={24} /> },
     { name: 'Curraturi', href: '/curraturi', icon: <Footprints size={24} /> }   
   ];
@@ -35,7 +34,6 @@ const Navbar = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
           
-          {/* Logo */}
           <Link to="/" onClick={() => setIsMenuOpen(false)} className="relative z-[210]">
             <div className={`text-xl font-black tracking-tighter leading-none ${isMenuOpen ? 'text-white' : 'text-blue-600'}`}>
               PODISTICA<br/>
@@ -43,7 +41,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Menu Desktop */}
           <div className="hidden xl:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
@@ -56,7 +53,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Bottone Toggle Mobile */}
           <div className="xl:hidden flex items-center gap-3 relative z-[210]">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -66,7 +62,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Desktop Iscriviti */}
           <div className="hidden lg:block">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-black uppercase tracking-wider shadow-lg shadow-blue-100">
               Iscriviti
@@ -75,7 +70,10 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* 2. MENU MOBILE OVERLAY (PAGINA INTERA) */}
+      {/* DISTANZIATORE: Occupa lo spazio fisico sotto la navbar fixed */}
+      {!isMenuOpen && <div className="h-20 w-full flex-shrink-0"></div>}
+
+      {/* 2. MENU MOBILE OVERLAY */}
       <div className={`fixed inset-0 z-[150] bg-slate-900 transition-transform duration-500 ease-in-out xl:hidden ${
         isMenuOpen ? 'translate-y-0' : '-translate-y-full'
       }`}>
@@ -103,7 +101,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Footer del Menu Mobile */}
           <div className={`mt-10 space-y-6 transition-all duration-700 delay-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}>
             <div className="h-px bg-white/10 w-full" />
             <a 

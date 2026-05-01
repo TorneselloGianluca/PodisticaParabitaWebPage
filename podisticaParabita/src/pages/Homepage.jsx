@@ -67,7 +67,7 @@ const Homepage = () => {
           </div>
           <h2 className="text-xs font-black uppercase tracking-[0.3em] text-blue-600 mb-4">Oltre la corsa</h2>
           <p className="text-2xl md:text-4xl font-bold text-slate-900 leading-tight tracking-tighter italic">
-            "La Podistica Parabita è <span className="text-blue-600 font-black">storia, territorio e fatica.</span> Da oltre quarant'anni corriamo per promuovere lo sport come stile di vita."
+            "La ASD Podistica Parabita è <span className="text-blue-600 font-black">una associazione sportiva dilettantistica nel cuore del Salento.</span> Da oltre quarant'anni corriamo per promuovere lo sport come stile di vita."
           </p>
           <div className="mt-8 flex justify-center gap-2">
             <span className="h-1.5 w-12 bg-blue-600 rounded-full"></span>

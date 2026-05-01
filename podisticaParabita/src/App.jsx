@@ -7,6 +7,7 @@ import Walking from './pages/Walking';
 import Calendario from './pages/Calendario';
 import ScalataVeneri from './pages/ScalataVeneri';
 import CurraturiPage from './pages/CurraturiPage';
+import MiglioriMomenti from './pages/MiglioriMomenti';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/gare" element={<Calendario />} />
         <Route path="/scalata" element={<ScalataVeneri />} />
         <Route path="/curraturi" element={<CurraturiPage />} /> 
+        <Route path="/miglioriMomenti" element={<MiglioriMomenti />} />
       </Routes>
     </Router>
   );

@@ -13,32 +13,32 @@ const ProssimeGare = () => {
   const gareData = [
     {
       id: 1,
-      titolo: "Campionati Provinciali di Società Esordienti",
-      data: "2026-04-26",
+      titolo: "1^ meeting provinciale pista",
+      data: "2026-05-02",
       luogo: "Lecce, LE",
       ora: "09:00",
       tipo: "Pista",
-      immagine: Lecce,
+      immagine: "https://www.liceodonmilani.it/wp-content/uploads/2021/06/Schermata-2018-01-22-alle-12.49.06-980x490-1.png",
       iscrizioniAperte: true
     },
     {
       id: 2,
-      titolo: "1^ Mezza Maratona Terre a Levante",
-      data: "2026-04-26",
-      luogo: "Spongano, LE",
-      ora: "07:30",
-      tipo: "22KM",
-      immagine: Spongano,
+      titolo: "14^ stracittadina magliese",
+      data: "2026-05-03",
+      luogo: "Maglie, LE",
+      ora: "08:30",
+      tipo: "10km",
+      immagine: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/28/4e/b8/maglie.jpg?w=1200&h=-1&s=1",
       iscrizioniAperte: true
     },
     {
       id: 3,
-      titolo: "43^ Marcialonga di Primavera",
-      data: "2026-05-01",
-      luogo: "Borgagne, LE",
+      titolo: "Running in Salento in Pista",
+      data: "2026-05-07",
+      luogo: "Lecce, LE",
       ora: "08:30",
-      tipo: "11KM",
-      immagine: Borgagne,
+      tipo: "varie",
+      immagine: "https://www.liceodonmilani.it/wp-content/uploads/2021/06/Schermata-2018-01-22-alle-12.49.06-980x490-1.png",
       iscrizioniAperte: true
     }
   ];
