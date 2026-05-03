@@ -23,7 +23,8 @@ const Navbar = () => {
     { name: 'Sponsor', href: '/sponsor', icon: <Info size={24} /> },
     { name: 'Migliori Momenti', href: '/miglioriMomenti', icon: <Info size={24} /> },
     { name: 'Walking', href: '/walking', icon: <Footprints size={24} /> },
-    { name: 'Curraturi', href: '/curraturi', icon: <Footprints size={24} /> }   
+    { name: 'Curraturi', href: '/curraturi', icon: <Footprints size={24} /> }, 
+    { name: 'Atleti', href: '/album', icon: <MessageCircle size={24} /> }
   ];
 
   return (

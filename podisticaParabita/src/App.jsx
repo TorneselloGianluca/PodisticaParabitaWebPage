@@ -8,6 +8,8 @@ import Calendario from './pages/Calendario';
 import ScalataVeneri from './pages/ScalataVeneri';
 import CurraturiPage from './pages/CurraturiPage';
 import MiglioriMomenti from './pages/MiglioriMomenti';
+import Album from './pages/Album';
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/scalata" element={<ScalataVeneri />} />
         <Route path="/curraturi" element={<CurraturiPage />} /> 
         <Route path="/miglioriMomenti" element={<MiglioriMomenti />} />
+        <Route path="/album" element={<Album />} />
       </Routes>
     </Router>
   );
