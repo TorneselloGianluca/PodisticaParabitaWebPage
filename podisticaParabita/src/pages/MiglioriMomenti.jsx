@@ -77,20 +77,27 @@ const MiglioriMomenti = () => {
         size: 'small',
         titolo: 'Assemblea dei Soci Natale 2025, Parabita'
     },
-
-
-//https://scontent.fmxp5-1.fna.fbcdn.net/v/t39.30808-6/598670010_1409680501007029_4753573442900223037_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=7b2446&_nc_ohc=njL_av5TgogQ7kNvwEfek1R&_nc_oc=Adry5rU16t3ul_zueUwIp9DHDgQiIgt-AesdRYlVJssBx8DK5Tl3pxVYKcHfqAQ2qSilsd3xwwgSsXfQGinibOLj&_nc_zt=23&_nc_ht=scontent.fmxp5-1.fna&_nc_gid=uGp5095owWEvkUZEcgARBw&_nc_ss=7b2a8&oh=00_Af7LZ5V3nFCmILT39lvJiISRJMMrTc3DDhoGoo8ngG4fpA&oe=69FA4CA2
-
-    /*
-    
+        
     {
-        id: 9,
-        url: '',
-        size: 'medium',
+        id: 13,
+        url: 'https://scontent.fmxp5-1.fna.fbcdn.net/v/t39.30808-6/595604901_1401501778491568_8896505785656187692_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=2a1932&_nc_ohc=Zsj23cHfdlAQ7kNvwGFksVZ&_nc_oc=Adr7wGMa_tjrumsOAGEijGgG1UgTyb-k_J2rO0MW9gqXjcub_g8TC73-M6JKOTRU33q2AtuG2WK7B6JRT_uJNekJ&_nc_zt=23&_nc_ht=scontent.fmxp5-1.fna&_nc_gid=DU3Vk1PBXqo0qJANYu35Gw&_nc_ss=7b2a8&oh=00_Af7FZftTxFstw1L-VFn8yDTFcaS_VZORehYUVbfcI-YJjw&oe=69FD7D33',
+        size: 'large',
         titolo: ''
     },
-    
-    */
+    {
+        id: 14,
+        url: 'https://scontent.fmxp5-1.fna.fbcdn.net/v/t39.30808-6/595604901_1401501778491568_8896505785656187692_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=2a1932&_nc_ohc=Zsj23cHfdlAQ7kNvwGFksVZ&_nc_oc=Adr7wGMa_tjrumsOAGEijGgG1UgTyb-k_J2rO0MW9gqXjcub_g8TC73-M6JKOTRU33q2AtuG2WK7B6JRT_uJNekJ&_nc_zt=23&_nc_ht=scontent.fmxp5-1.fna&_nc_gid=DU3Vk1PBXqo0qJANYu35Gw&_nc_ss=7b2a8&oh=00_Af7FZftTxFstw1L-VFn8yDTFcaS_VZORehYUVbfcI-YJjw&oe=69FD7D33',
+        size: 'small',
+        titolo: ''
+    },
+    {
+        id: 15,
+        url: 'https://scontent.fmxp4-1.fna.fbcdn.net/v/t39.30808-6/672606451_26666738692938342_1985162091915754237_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=7b2446&_nc_ohc=I-wVeZn9V5gQ7kNvwE2bQUv&_nc_oc=Adpee65q2B8nVVpxPYeXpBtZ0HXzKTJ42Y-Lb37GOqT_ORr3dMBo3rdaMrbgp-Lf-EE&_nc_zt=23&_nc_ht=scontent.fmxp4-1.fna&_nc_gid=VzAWpfRrG4G_yHnGVmv32Q&_nc_ss=7b2a8&oh=00_Af60QRiq4HtzZbr8C5NU0EY50nFLel7p5KWlvjWpygUaBg&oe=69FF066B',
+        size: 'small',
+        titolo: 'Riccardo & Yeman'
+    },
+
+
 
   ];
 

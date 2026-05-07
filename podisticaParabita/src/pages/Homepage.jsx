@@ -19,10 +19,43 @@ import Video from '../assets/video1.mp4';
 import CaroselloImmagini from '../components/CaroselloImmagini';
 import Social from '../components/Social';
 
+import sponsor1 from '../assets/sponsor/1.png';
+import sponsor2 from '../assets/sponsor/2.png';
+import sponsor3 from '../assets/sponsor/3.png';
+import sponsor4 from '../assets/sponsor/4.png';
+
 const Homepage = () => {
+
+  const sponsorLogos = [
+    { id: 2, name: "Sponsor 2", logo: sponsor2 },
+    { id: 3, name: "Sponsor 3", logo: sponsor3 },
+    { id: 4, name: "Sponsor 4", logo: sponsor4 },
+    { id: 5, name: "Sponsor 5", logo: "https://www.lacorsadimiguel.it/miguel-newsite/wp-content/uploads/logo-fidal.png" },
+
+
+  ];
+
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden font-sans">
       
+      {/* Animazione CSS per lo scorrimento infinito */}
+      <style>
+        {`
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+          }
+          .animate-scroll:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
+
       {/* === HERO SECTION === */}
       <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-end lg:items-center bg-slate-900 overflow-hidden">
         <div 
@@ -57,6 +90,22 @@ const Homepage = () => {
         </div>
       </section>
 
+      {/* === STRISCIA SPONSOR SCORREVOLE === */}
+      <div className="bg-white border-y border-slate-100 py-4 relative overflow-hidden group">
+        <div className="animate-scroll">
+          {/* Triplichiamo l'array per garantire lo scorrimento infinito senza buchi */}
+          {[...sponsorLogos, ...sponsorLogos, ...sponsorLogos].map((sponsor, index) => (
+            <div key={index} className="mx-3 md:mx-6 flex items-center justify-center w-32 md:w-44 shrink-0">
+              <img 
+                src={sponsor.logo} 
+                alt={sponsor.name} 
+                className="max-h-16 md:max-h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* === CHI SIAMO INTRO === */}
       <section className="py-16 md:py-24 px-6 bg-white relative">
         <div className="max-w-4xl mx-auto text-center">
@@ -73,7 +122,7 @@ const Homepage = () => {
             <span className="h-1.5 w-12 bg-blue-600 rounded-full"></span>
             <span className="h-1.5 w-4 bg-blue-200 rounded-full"></span>
           </div>
-        </div>
+        </div> 
       </section>
 
       <CaroselloImmagini />
@@ -83,8 +132,6 @@ const Homepage = () => {
       </div>
 
       <Informazioni />
-
-
 
       {/* Video Section */}
       <section className="py-12 px-4 md:px-8">
@@ -105,6 +152,65 @@ const Homepage = () => {
       <Team />
       <Social />
       <Contatti />
+
+      {/* === FOOTER ISTITUZIONALE === */}
+      <footer className="bg-slate-900 text-white pt-20 pb-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all mb-16 pb-12 border-b border-white/10">
+            <div className="text-center">
+              <div className="h-12 w-12 bg-white/20 rounded-full mx-auto mb-2 flex items-center justify-center font-bold text-[10px]">CONI</div>
+              <p className="text-[8px] uppercase tracking-widest">Affiliata CONI</p>
+            </div>
+            <div className="text-center">
+              <div className="h-12 w-12 bg-white/20 rounded-full mx-auto mb-2 flex items-center justify-center font-bold text-[10px]">FIDAL</div>
+              <p className="text-[8px] uppercase tracking-widest">Federazione FIDAL</p>
+            </div>
+            <div className="text-center">
+              <div className="h-12 w-12 bg-white/20 rounded-full mx-auto mb-2 flex items-center justify-center font-bold text-[10px]">ASI</div>
+              <p className="text-[8px] uppercase tracking-widest">Ente Promozione</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            <div>
+              <h3 className="text-xl font-black uppercase tracking-tighter mb-6">
+                ASD Podistica <span className="text-blue-500">Parabita</span>
+              </h3>
+              <ul className="text-slate-400 text-sm space-y-2 font-medium">
+                <li>Sede Legale: Via Roma, 1 - 73052 Parabita (LE)</li>
+                <li>Codice Fiscale: 90001234567</li>
+                <li>P. IVA: 01234567890</li>
+                <li>Iscr. Registro RASD: n. 123456</li>
+                <li>PEC: podisticaparabita@pec.it</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-black uppercase tracking-widest mb-6 text-blue-500">Trasparenza</h4>
+              <ul className="text-slate-400 text-sm space-y-4 font-bold uppercase tracking-tight">
+                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors underline decoration-blue-500/50">Contributi Pubblici (L. 124/2017)</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Modello Organizzativo (MOG)</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-black uppercase tracking-widest mb-6 text-blue-500">Social & Utility</h4>
+              <div className="flex gap-4 mb-6">
+                <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-blue-600 transition-all"><Share2 size={20}/></a>
+                <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-blue-600 transition-all"><Globe size={20}/></a>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-8 border-t border-white/10 text-center">
+            <p className="text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em]">
+              © 2026 ASD Podistica Parabita • Tutti i diritti riservati • Created with Passion in Salento
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
