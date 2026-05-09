@@ -31,6 +31,7 @@ const Homepage = () => {
     { id: 3, name: "Sponsor 3", logo: sponsor3 },
     { id: 4, name: "Sponsor 4", logo: sponsor4 },
     { id: 5, name: "Sponsor 5", logo: "https://www.lacorsadimiguel.it/miguel-newsite/wp-content/uploads/logo-fidal.png" },
+    { id: 5, name: "Sponsor 5", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYQShT_ZyuZPF6IjUG8OfyyJV8LvWCAM8P2A&s" },
 
 
   ];

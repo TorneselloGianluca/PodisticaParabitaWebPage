@@ -9,10 +9,9 @@ import sponsor4 from '../assets/sponsor/4.png';
 const Sponsor = () => {
   const sponsorData = {
     gold: [
-      { id: 2, nome: "Città di Parabita", logo: sponsor1, sito: "#" },
-      { id: 3, nome: "Officine Cantelmo", logo: sponsor2, sito: "#" },
-      { id: 4, nome: "Leopizzi Antonio", logo: sponsor3, sito: "#" },
-      { id: 5, nome: "Clark", logo: sponsor4, sito: "#" },
+      { id: 3, nome: "Officine Cantelmo", logo: sponsor2, sito: "https://www.officinecantelmo.it/" },
+      { id: 4, nome: "Leopizzi Antonio", logo: sponsor3, sito: "https://www.facebook.com/p/Ditta-Antonio-Leopizzi-Termoidraulico-100028127662321/" },
+      { id: 5, nome: "Clark", logo: sponsor4, sito: "https://clarksrl.it/" },
     ],
     silver: [
       { id: 6, nome: "Sport & Co", logo: "https://via.placeholder.com/200x100?text=Sport", sito: "#" },

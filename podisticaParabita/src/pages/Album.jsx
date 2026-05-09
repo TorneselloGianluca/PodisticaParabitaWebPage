@@ -11,6 +11,7 @@ import Giaffreda from '../assets/giaffreda.png';
 import Camisa from '../assets/camisa.png';
 import Bleve from '../assets/bleve1.png';
 import Carmelo from '../assets/carmelo.png';
+import Gatto from '../assets/gatto.png';
 
 const AtletiData = [
   { id: 1, nome: "Antonio", cognome: "Alibrando", genere: "Maschio", foto: "https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/688882324_1523617159613362_7607167930095284644_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=7b2446&_nc_ohc=aKVzfRxyzSIQ7kNvwF-OEf6&_nc_oc=AdoQ8WWjAHSfx-WR5jaIcmAic3lSBLeyS-HJtLskG2-86Fnlm9GwhnEGBnC2gJrSMphU6Q-w1anZyVcr6Imrg9T0&_nc_zt=23&_nc_ht=scontent-fco2-1.xx&_nc_gid=2rtdNmOpUGQ72CNlW-DTkQ&_nc_ss=7b2a8&oh=00_Af53n86ZsYpbuK-COtb3LCaumWlYy4qopxZo1lLp5vGVuw&oe=69FD7B92" },
@@ -50,7 +51,7 @@ const AtletiData = [
   { id: 36, nome: "Luigi", cognome: "Finolezzi", genere: "Maschio", foto: "https://scontent.fmxp4-1.fna.fbcdn.net/v/t39.30808-6/557626456_2796142387253989_1930468346803055542_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=Qz2JS0LXWRgQ7kNvwFtexL3&_nc_oc=Adp7hHTPl7SslTtrrixr0HtaRNuUMHaLVe6GHEh5t7UCA9JT7XkSqirpmIRfDOUuxLk&_nc_zt=23&_nc_ht=scontent.fmxp4-1.fna&_nc_gid=QpFMWhxaSrBd-h8N1yNcgA&_nc_ss=7b2a8&oh=00_Af73av02s7AKMgEO-qvKFEyL5Mjj8paxDlYIj5C-TCl-zg&oe=69FEF9F5" },
   { id: 37, nome: "Mauro", cognome: "Federico", genere: "Maschio", foto: "" },
   { id: 38, nome: "Riccardo", cognome: "Fiorenza", genere: "Maschio", foto: "https://scontent.ffco2-1.fna.fbcdn.net/v/t39.30808-6/611294233_1424252019549877_4384969365269934224_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_ohc=IqmyKTHcG1EQ7kNvwG5Waym&_nc_oc=AdpA37fulF6YmtCWpzBYTfZd7K3H1FshBM4ofzN04gmZmwC2Pfh4vRF64gCBjr8AFOByUjWGeSZOsUGYAMQsiveQ&_nc_zt=23&_nc_ht=scontent.ffco2-1.fna&_nc_gid=mnWnqZmPINo-fu0Su9qR-g&_nc_ss=7b2a8&oh=00_Af6rD5XrAuc-vcLmK5WRdBJcTQK0KZJ37MCsakinK2Ze_w&oe=69FD08FC" },
-  { id: 39, nome: "Antonietta", cognome: "Gatto", genere: "Femmina", foto: "" },
+  { id: 39, nome: "Antonietta", cognome: "Gatto", genere: "Femmina", foto: Gatto },
   { id: 40, nome: "Gianni", cognome: "Garzia", genere: "Maschio", foto: "https://scontent.fmxp5-1.fna.fbcdn.net/v/t39.30808-6/492713119_1214128293895585_3895934599674212472_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=7b2446&_nc_ohc=UAADq5rT-bkQ7kNvwFTbL30&_nc_oc=AdpTMBeAzR6B28Uj17lfAR1Zh9Wpzjj3K5J0VaXN_A8jXYnYVcGPSC6mxiIf5ktOsmr59dxEL8sTfnVXSsooxTgg&_nc_zt=23&_nc_ht=scontent.fmxp5-1.fna&_nc_gid=UVcssYh5NWCjRft2eab7sg&_nc_ss=7b2a8&oh=00_Af5EtK7aSma4zH6hdTjReGllUYM2EpisDCwkgthyYWVUtA&oe=69FD079D" },
   { id: 41, nome: "Giulio", cognome: "Giaffreda", genere: "Maschio", foto: Giaffreda },
   { id: 42, nome: "Raffaele", cognome: "Gatto", genere: "Maschio", foto: "" },
