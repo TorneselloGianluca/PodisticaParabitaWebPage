@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Homepage from './pages/Homepage';
 import Risultati from './pages/Risultati';
 import Sponsor from './pages/Sponsor';
@@ -11,13 +12,25 @@ import MiglioriMomenti from './pages/MiglioriMomenti';
 import Album from './pages/Album';
 
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
+
         <Route path="/" element={<Homepage />} />
-        <Route path="/home" element={<Homepage />} />
+        
+        <Route path="/home" element={<Navigate to="/" replace />} />
+        
         <Route path="/risultati" element={<Risultati />} />
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/walking" element={<Walking />} />
@@ -26,6 +39,8 @@ function App() {
         <Route path="/curraturi" element={<CurraturiPage />} /> 
         <Route path="/miglioriMomenti" element={<MiglioriMomenti />} />
         <Route path="/album" element={<Album />} />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

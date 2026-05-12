@@ -173,3 +173,4 @@ const ScalataVeneri = () => {
 };
 
 export default ScalataVeneri;
+
