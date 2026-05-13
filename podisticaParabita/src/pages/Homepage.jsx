@@ -156,7 +156,7 @@ const Homepage = () => {
       <ProssimeGare />
       <Team />
       <Social />
-      <Contatti />
+  
 
       {/* === FOOTER ISTITUZIONALE === */}
       <footer className="bg-slate-900 text-white pt-20 pb-10">
