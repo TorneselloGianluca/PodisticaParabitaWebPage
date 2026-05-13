@@ -1,43 +1,38 @@
 import React, { useState, useRef } from 'react';
-import { Calendar, Map, Clock, Play, Pause } from 'lucide-react';
+import { 
+  Calendar, 
+  Map, 
+  Clock, 
+  Play, 
+  Pause 
+} from 'lucide-react';
+
+
 
 // === ASSETS ===
 import Podistica from '../assets/curraturi/curraturi.jpg'; 
 import RaceVideo from '../assets/curraturi/curraturi.mp4'; 
-import img1 from '../assets/curraturi/img1.png';
+import img1 from '../assets/curraturi/img1.png'; 
 import img2 from '../assets/curraturi/img2.png';
 import locandina1 from '../assets/curraturi/locandina1.png';
 import locandina2 from '../assets/curraturi/locandina2.png';
 import locandina3 from '../assets/curraturi/locandina3.png';
-
 import sfondo1 from '../assets/curraturi/sfondo1.png';
 import sfondo2 from '../assets/curraturi/sfondo2.png';
-import sfondo3 from '../assets/curraturi/sfondo3.png';
-import sfondo4 from '../assets/curraturi/sfondo4.png';
+import comitato from '../assets/comitato.png';
+import podistica from '../assets/logo.jpeg';
+import comune from '../assets/sponsor/1.png';
 
 const CurraturiPage = () => {
-
-  // === CONFIGURAZIONE SFONDI E OPACITÀ ===
   const BackgroundOptions = {
-    descrizione: { img: sfondo1, opacity: 40 }, // Sfondo sezione "Cosa sono i Curraturi"
-    atmosfera: { img: sfondo2, opacity: 30 },   // Sfondo sezione Video YouTube
-    ctaFinale: { img: sfondo3, opacity: 100 }   // Sfondo sezione "Pronto a Correre"
+    descrizione: { img: sfondo1, opacity: 40 }, 
+    atmosfera: { img: sfondo2, opacity: 30 },   
   };
 
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-
   const locandine = [locandina1, locandina2, locandina3];
-
-  const galleryImages = [
-    { id: 1, src: img1, alt: "Maratona Parabita 1" },
-    { id: 2, src: img2, alt: "Maratona Parabita 2" },
-    { id: 3, src: sfondo1, alt: "Momento Gara" },
-    { id: 4, src: sfondo2, alt: "Atleti in corsa" },
-    { id: 5, src: sfondo3, alt: "Traguardo" },
-    { id: 6, src: sfondo4, alt: "Premiazione" },
-  ];
-
+  
   const youtubeVideos = [
     { id: "T2ug1_w9Lqw", title: "Edizione 2019" },
     { id: "XCrmoWoevq8", title: "Edizione 2025" },
@@ -55,21 +50,15 @@ const CurraturiPage = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-orange-200 overflow-x-hidden">
       
-      {/* === HERO SECTION + QUICK INFO (BLOCCO UNICO SCURO) === */}
+      {/* === HERO SECTION + QUICK INFO === */}
       <section className="relative bg-slate-900 pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
-        {/* Sfondo Hero */}
         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105 opacity-60" style={{ backgroundImage: `url(${Podistica})` }}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 via-slate-900/60 to-red-900/80"></div>
-        
         <div className="relative z-10 max-w-7xl mx-auto px-8 text-center text-white mb-16">
           <span className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.3em] mb-6">Edizione 2026</span>
-          <h1 className="text-6xl lg:text-9xl font-black italic tracking-tighter drop-shadow-2xl uppercase">
-            <span className="text-white">CURRATURI</span>
-          </h1>
+          <h1 className="text-6xl lg:text-9xl font-black italic tracking-tighter drop-shadow-2xl uppercase text-white">CURRATURI</h1>
           <p className="mt-6 text-lg md:text-xl text-slate-100 max-w-2xl mx-auto font-medium leading-relaxed italic">Il rosso della passione, il verde della nostra terra, il bianco della libertà.</p>
         </div>
-
-        {/* QUICK INFO (Integrata nel blocco scuro per eliminare stacchi bianchi laterali) */}
         <div className="relative z-20 max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 shadow-2xl rounded-3xl overflow-hidden bg-white border border-slate-100">
             <div className="p-8 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-slate-100">
@@ -91,18 +80,70 @@ const CurraturiPage = () => {
         </div>
       </section>
 
-      {/* === VIDEO & DESCRIPTION (TESTO BIANCO SISTEMATO) === */}
-      <section className="relative py-16 lg:py-24 px-6 md:px-8 overflow-hidden bg-slate-900">
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-fixed bg-center" 
-          style={{ 
-            backgroundImage: `url(${BackgroundOptions.descrizione.img})`,
-            opacity: BackgroundOptions.descrizione.opacity / 100 
-          }}
-        ></div>
-        {/* Overlay per migliorare leggibilità testo bianco */}
-        <div className="absolute inset-0 z-0 bg-black/30"></div>
+{/* === SEZIONE LOGO E SOCIAL (TUTTO SU UNA RIGA) === */}
+{/* === BANNER LOGHI E SOCIAL === */}
+{/* === BANNER LOGHI E SOCIAL (COLORI NATURALI E SENZA CONTORNI) === */}
+{/* === BANNER LOGHI E SOCIAL (3 LOGHI - COLORI NATURALI) === */}
+      <section className="relative z-30 py-10 bg-white border-b border-slate-100 w-full">
+        <div className="max-w-7xl mx-auto px-8 flex flex-col items-center justify-center">
+          
+          {/* Contenitore Unico Centrato */}
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            
+            {/* Gruppo 3 Loghi (Senza bordi, colori naturali) */}
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              <img 
+                src={comitato} 
+                alt="Logo Comitato" 
+                className="h-20 md:h-28 w-auto object-contain transition-transform hover:scale-105" 
+              />
+              <img 
+                src={podistica} 
+                alt="Logo Podistica" 
+                className="h-20 md:h-28 w-auto object-contain transition-transform hover:scale-105" 
+              />
+              <img 
+                src={comune} 
+                alt="Logo Sponsor/Partner" 
+                className="h-20 md:h-28 w-auto object-contain transition-transform hover:scale-105" 
+              />
+            </div>
 
+            {/* Separatore Verticale (visibile solo su desktop) */}
+            <div className="hidden lg:block w-px h-12 bg-slate-200"></div>
+
+            {/* Gruppo Social */}
+            <div className="flex items-center gap-6 md:gap-8">
+              {/* Facebook */}
+              <a href="#" className="group flex flex-col items-center gap-2">
+                <div className="p-3 text-slate-400 group-hover:text-blue-600 transition-all duration-300 transform group-hover:scale-110">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                </div>
+                <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-blue-600 transition-colors">Facebook</span>
+              </a>
+              
+              {/* Instagram */}
+              <a href="#" className="group flex flex-col items-center gap-2">
+                <div className="p-3 text-slate-400 group-hover:text-pink-600 transition-all duration-300 transform group-hover:scale-110">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-pink-600 transition-colors">Instagram</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      {/* === VIDEO & DESCRIPTION === */}
+      <section className="relative py-16 lg:py-24 px-6 md:px-8 overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 z-0 bg-cover bg-fixed bg-center" style={{ backgroundImage: `url(${BackgroundOptions.descrizione.img})`, opacity: BackgroundOptions.descrizione.opacity / 100 }}></div>
+        <div className="absolute inset-0 z-0 bg-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
@@ -117,21 +158,14 @@ const CurraturiPage = () => {
                 </div>
               </div>
             </div>
-
-            <div className="lg:col-span-7 text-center lg:text-left">
-              <div className="flex justify-center lg:justify-start gap-2 mb-6">
-                <div className="w-10 h-1 bg-orange-500 rounded-full"></div>
+            <div className="lg:col-span-7 text-center lg:text-left text-white">
+              <div className="flex justify-center lg:justify-start gap-2 mb-6 text-orange-500">
+                <div className="w-10 h-1 bg-current rounded-full"></div>
                 <div className="w-3 h-1 bg-red-500 rounded-full"></div>
               </div>
-              <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter italic leading-none text-white drop-shadow-lg">
-                Cosa sono i <br/><span className="text-orange-500">Curraturi</span>?
-              </h2>
-              <p className="text-base md:text-xl text-white leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 italic drop-shadow-md">
-                I Curraturi rappresentano una tradizionale manifestazione religiosa che rievoca il ritrovamento del Monolito della Madonna della Coltura. L'evento ricorda il gesto del contadino che, pieno di gioia, corse verso il paese per annunciare la straordinaria scoperta della sacra immagine. Nonostante l'atto della corsa, non si tratta di una competizione podistica, bensì di un evento della tradizione di Parabita vissuto con spirito fraterno e gioioso in omaggio alla Madonna.
-              </p>
-              <div className="mt-8 pt-6 border-t border-white/20 inline-block">
-                <p className="text-orange-400 font-bold uppercase tracking-widest text-xs">Tradizione • Fede • Territorio</p>
-              </div>
+              <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter italic leading-none drop-shadow-lg">Cosa sono i <br/><span className="text-orange-500">Curraturi</span>?</h2>
+              <p className="text-base md:text-xl leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 italic drop-shadow-md opacity-90">I Curraturi rappresentano una tradizionale manifestazione religiosa che rievoca il ritrovamento del Monolito della Madonna della Coltura. L'evento ricorda il gesto del contadino che, pieno di gioia, corse verso il paese per annunciare la straordinaria scoperta della sacra immagine.</p>
+              <div className="mt-8 pt-6 border-t border-white/20 inline-block text-orange-400 font-bold uppercase tracking-widest text-xs">Tradizione • Fede • Territorio</div>
             </div>
           </div>
         </div>
@@ -153,37 +187,13 @@ const CurraturiPage = () => {
         </div>
       </section>
 
-      {/* === MOMENTI MIGLIORI === */}
-      <section className="py-24 bg-orange-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        <div className="max-w-7xl mx-auto px-8 relative z-10 text-center md:text-left">
-          <div className="mb-16">
-            <h2 className="text-white text-4xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">Momenti Migliori</h2>
-          </div>
-          <div className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
-            {galleryImages.map((img) => (
-              <div key={img.id} className="relative group overflow-hidden rounded-3xl bg-slate-900 shadow-2xl border-4 border-white/10">
-                <img src={img.src} alt={img.alt} className="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-8 text-white font-black uppercase text-xs tracking-widest italic">{img.alt}</div>    
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* === YOUTUBE VIDEO SECTION === */}
-      <section className="relative py-24 overflow-hidden border-t border-slate-100">
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-fixed bg-center" 
-          style={{ 
-            backgroundImage: `url(${BackgroundOptions.atmosfera.img})`,
-            opacity: BackgroundOptions.atmosfera.opacity / 100 
-          }}
-        ></div>
+      <section className="relative py-24 overflow-hidden border-t border-slate-100 bg-white">
+        <div className="absolute inset-0 z-0 bg-cover bg-fixed bg-center" style={{ backgroundImage: `url(${BackgroundOptions.atmosfera.img})`, opacity: BackgroundOptions.atmosfera.opacity / 100 }}></div>
         <div className="relative z-10 max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row items-center gap-4 mb-16 text-center md:text-left">
-            <div className="bg-orange-600 p-3 rounded-2xl text-white shadow-lg">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            <div className="bg-orange-600 p-3 rounded-2xl text-white shadow-lg flex items-center justify-center">
+               <Play size={24} fill="currentColor" />
             </div>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic text-slate-900">L'Atmosfera dei <span className="text-orange-600">Curraturi</span></h2>
           </div>
@@ -201,20 +211,12 @@ const CurraturiPage = () => {
       </section>
 
       {/* === CTA FINALE === */}
-      <section className="relative py-32 px-8 text-center overflow-hidden border-t border-slate-100">
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center" 
-          style={{ 
-            backgroundImage: `url(${BackgroundOptions.ctaFinale.img})`,
-            opacity: BackgroundOptions.ctaFinale.opacity / 100 
-          }}
-        ></div>
-        <div className="absolute inset-0 z-10 bg-slate-900/60 backdrop-blur-[2px]"></div>
-        <div className="relative z-20 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-7xl font-black text-white mb-10 italic uppercase tracking-tighter leading-none">Pronto a <br/><span className="text-orange-500">correre?</span></h2>
+      <section className="relative py-24 px-8 text-center border-t border-slate-100 bg-white">
+        <div className="relative z-20 max-w-3xl mx-auto text-center flex flex-col items-center">
+          <h2 className="text-4xl md:text-7xl font-black text-slate-900 mb-10 italic uppercase tracking-tighter leading-none text-center">Pronto a <br/><span className="text-orange-500">correre?</span></h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-orange-600 text-white px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-white hover:text-orange-600 transition-all shadow-2xl shadow-orange-900/40">Iscriviti Ora</button>
-            <button className="border-2 border-white text-white px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-white hover:text-slate-900 transition-all">Regolamento</button>
+            <button className="bg-orange-600 text-white px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-slate-900 transition-all shadow-2xl shadow-orange-900/40">Iscriviti Ora</button>
+            <button className="border-2 border-orange-600 text-orange-600 px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-orange-50 transition-all">Regolamento</button>
           </div>
         </div>
       </section>
