@@ -9,7 +9,6 @@ import AntonioTornesello from '../assets/AntonioTornesello.jpeg';
 import CataldoBiagio from '../assets/CataldoBiagio.png';
 import ProvenzanoGiuseppe from '../assets/GiuseppeProvenzano.png';
 import NicolettiLuigi from '../assets/Nicoletti.png';
-
 import TommasoNicoletti from '../assets/TommasoNicoletti.png';
 import FrancescoMauro from '../assets/FrancescoMauro.png';
 
@@ -37,14 +36,14 @@ const Team = () => {
           {/* Testo Laterale */}
           <div className="lg:col-span-4 text-center lg:text-left">
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white uppercase">
-              Il Nostro <br className="hidden lg:block"/> <span className="text-blue-500">Team</span>
+              Il Nostro <br className="hidden lg:block"/> <span className="text-orange-500">Team</span>
             </h2>
             <p className="mt-6 text-base md:text-lg leading-relaxed text-gray-400">
               Non ci unisce solo un pettorale, ma ogni singolo chilometro percorso insieme sotto il sole del Salento. Corriamo per superare i nostri limiti e condividere la gioia del traguardo.
             </p>
           </div>
 
-          {/* Griglia Membri: 1 colonna su mobile, 2 su tablet/desktop */}
+          {/* Griglia Membri */}
           <div className="lg:col-span-8">
             <ul role="list" className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
               {staff.map((membro, index) => (
@@ -52,11 +51,11 @@ const Team = () => {
                   <img 
                     src={membro.img} 
                     alt={membro.nome} 
-                    className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-2 border-blue-500/30" 
+                    className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-2 border-orange-500/30" 
                   />
                   <div>
                     <h3 className="text-base md:text-lg font-bold text-white tracking-tight">{membro.nome}</h3>
-                    <p className="text-sm font-semibold text-blue-400 uppercase tracking-widest">{membro.ruolo}</p>
+                    <p className="text-sm font-semibold text-orange-400 uppercase tracking-widest">{membro.ruolo}</p>
                   </div>
                 </li>
               ))}
