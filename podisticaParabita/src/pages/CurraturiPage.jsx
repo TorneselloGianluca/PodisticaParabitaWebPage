@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { Calendar, Map, Clock, Play, Pause, ChevronLeft, ChevronRight, Youtube } from 'lucide-react';
+// HO TOLTO Youtube DA QUI PER EVITARE L'ERRORE DI BUILD
+import { Calendar, Map, Clock, Play, Pause, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // === ASSETS ===
 import Podistica from '../assets/curraturi/curraturi.jpg'; 
 import RaceVideo from '../assets/curraturi/curraturi.mp4'; 
 import img1 from '../assets/curraturi/img1.png';
 import img2 from '../assets/curraturi/img2.png';
-
 import locandina1 from '../assets/curraturi/locandina1.png';
 import locandina2 from '../assets/curraturi/locandina2.png';
 import locandina3 from '../assets/curraturi/locandina3.png';
@@ -26,20 +26,10 @@ const CurraturiPage = () => {
     { id: 6, src: "https://picsum.photos/600/600?random=8", alt: "Premiazione" },
   ];
 
-
-const youtubeVideos = [
-    { 
-      id: "T2ug1_w9Lqw", 
-      title: "Edizione 2019" 
-    },
-    { 
-      id: "XCrmoWoevq8", 
-      title: "Edizione 2025" 
-    },
-    { 
-      id: "T2ug1_w9Lqw", // Aggiungi un terzo ID o ripeti uno dei precedenti per completare la griglia a 3
-      title: "I Curraturi - Highlights" 
-    }
+  const youtubeVideos = [
+    { id: "T2ug1_w9Lqw", title: "Edizione 2019" },
+    { id: "XCrmoWoevq8", title: "Edizione 2025" },
+    { id: "T2ug1_w9Lqw", title: "I Curraturi - Highlights" }
   ];
 
   const togglePlay = () => {
@@ -81,7 +71,7 @@ const youtubeVideos = [
           </div>
           <div className="p-8 flex flex-col items-center text-center">
             <Map size={32} className="text-red-600 mb-3" />
-            <span className="text-[10px] text-slate-400 uppercase font-black tracking-widest leading-none mb-2">Percorsi</span>
+            <span className="text-[10px] text-slate-400 uppercase font-black tracking-widest mb-2">Percorsi</span>
             <span className="text-xl font-black text-slate-800 tracking-tight">2km</span>
           </div>
         </div>
@@ -112,7 +102,7 @@ const youtubeVideos = [
               Cosa sono i <br/><span className="text-emerald-600">Curraturi</span>?
             </h2>
             <div className="space-y-5 text-base md:text-lg text-slate-600 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
-              <p>I Curraturi rappresentano una tradizionale manifestazione religiosa che rievoca il ritrovamento del Monolito della Madonna della Coltura. L'evento ricorda il gesto del contadino che, pieno di gioia, corse verso il paese per annunciare la straordinaria scoperta della sacra immagine.</p>
+              <p>I Curraturi rappresentano una tradizionale manifestazione religiosa che rievoca il ritrovamento del Monolito della Madonna della Coltura.</p>
             </div>
           </div>
         </div>
@@ -125,8 +115,8 @@ const youtubeVideos = [
         </div>
         <div className="flex md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 px-6 md:max-w-7xl md:mx-auto">
           {locandine.map((url, index) => (
-            <div key={index} className="min-w-[85vw] md:min-w-0 snap-center bg-white p-3 rounded-[2rem] shadow-xl border border-slate-100 flex-shrink-0">
-               <div className="aspect-[2/3] w-full max-h-[65vh] md:max-h-none rounded-2xl overflow-hidden bg-slate-50">
+            <div key={index} className="min-w-[85vw] md:min-w-0 snap-center bg-white p-3 rounded-[2rem] shadow-xl border border-slate-100 flex-shrink-0 flex items-center justify-center">
+               <div className="aspect-[2/3] w-full max-h-[65vh] md:max-h-none rounded-2xl overflow-hidden bg-slate-50 flex items-center justify-center">
                   <img src={url} alt={`Locandina ${index + 1}`} className="w-full h-full object-contain md:object-cover" />
                </div>
             </div>
@@ -161,7 +151,8 @@ const youtubeVideos = [
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row items-center gap-4 mb-16 text-center md:text-left">
             <div className="bg-red-600 p-3 rounded-2xl text-white shadow-lg">
-              <Youtube size={32} />
+              {/* ICONA YOUTUBE CREATA MANUALMENTE IN SVG PER EVITARE ERRORI DI BUILD */}
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
             </div>
             <div>
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic">L'Atmosfera dei <span className="text-red-600">Curraturi</span></h2>
@@ -172,10 +163,10 @@ const youtubeVideos = [
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {youtubeVideos.map((video, index) => (
               <div key={index} className="group">
-                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white transition-transform duration-500 group-hover:scale-[1.02]">
+                <div className="relative w-full pb-[56.25%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black transition-transform duration-500 group-hover:scale-[1.02]">
                   <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${video.id}`}
+                    className="absolute top-0 left-0 w-full h-full"
+                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0`}
                     title={video.title}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
