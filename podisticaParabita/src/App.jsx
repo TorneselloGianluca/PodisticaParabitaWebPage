@@ -1,9 +1,14 @@
 import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+
+// Import Componenti
+import Navbar from './components/Navbar';
+import BackToHome from './components/BackToHome';
+
+// Import Pagine
 import Homepage from './pages/Homepage';
 import Risultati from './pages/Risultati';
 import Sponsor from './pages/Sponsor';
-import Navbar from './components/Navbar';
 import Walking from './pages/Walking';
 import Calendario from './pages/Calendario';
 import ScalataVeneri from './pages/ScalataVeneri';
@@ -25,8 +30,11 @@ function App() {
     <Router>
       <ScrollToTop />
       <Navbar />
-      <Routes>
+      
 
+      <BackToHome />
+
+      <Routes>
         <Route path="/" element={<Homepage />} />
         
         <Route path="/home" element={<Navigate to="/" replace />} />

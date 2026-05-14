@@ -14,10 +14,10 @@ const Sponsor = () => {
       { id: 5, nome: "Clark", logo: sponsor4, sito: "https://clarksrl.it/" },
     ],
     silver: [
-      { id: 6, nome: "Sport & Co", logo: "https://via.placeholder.com/200x100?text=Sport", sito: "#" },
-      { id: 7, nome: "Ristorante Da Mario", logo: "https://via.placeholder.com/200x100?text=Ristorante", sito: "#" },
-      { id: 8, nome: "Auto Salento", logo: "https://via.placeholder.com/200x100?text=Auto", sito: "#" },
-      { id: 9, nome: "Edilizia Parabita", logo: "https://via.placeholder.com/200x100?text=Edilizia", sito: "#" },
+      { id: 6, nome: "Da inserire", logo: "https://via.placeholder.com/200x100?text=Sport", sito: "#" },
+      { id: 7, nome: "Da inserire", logo: "https://via.placeholder.com/200x100?text=Ristorante", sito: "#" },
+      { id: 8, nome: "Da inserire", logo: "https://via.placeholder.com/200x100?text=Auto", sito: "#" },
+      { id: 9, nome: "Da inserire", logo: "https://via.placeholder.com/200x100?text=Edilizia", sito: "#" },
     ]
   };
 

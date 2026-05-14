@@ -7,13 +7,9 @@ import {
   Pause 
 } from 'lucide-react';
 
-
-
 // === ASSETS ===
 import Podistica from '../assets/curraturi/curraturi.jpg'; 
 import RaceVideo from '../assets/curraturi/curraturi.mp4'; 
-import img1 from '../assets/curraturi/img1.png'; 
-import img2 from '../assets/curraturi/img2.png';
 import locandina1 from '../assets/curraturi/locandina1.png';
 import locandina2 from '../assets/curraturi/locandina2.png';
 import locandina3 from '../assets/curraturi/locandina3.png';
@@ -29,16 +25,20 @@ const CurraturiPage = () => {
     atmosfera: { img: sfondo2, opacity: 30 },   
   };
 
+  // Hooks & Refs
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
+  const regolamentoRef = useRef(null); // Riferimento per la terza locandina
+
   const locandine = [locandina1, locandina2, locandina3];
   
   const youtubeVideos = [
-    { id: "T2ug1_w9Lqw", title: "Edizione 2019" },
+    { id: "ihuhjNRK9I0", title: "Edizione 2019" },
     { id: "XCrmoWoevq8", title: "Edizione 2025" },
     { id: "T2ug1_w9Lqw", title: "I Curraturi - Highlights" }
   ];
 
+  // Funzioni di Interazione
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) videoRef.current.pause();
@@ -47,10 +47,20 @@ const CurraturiPage = () => {
     }
   };
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "393317018865"; 
+    const message = encodeURIComponent("Ciao! Vorrei verificare la disponibilità dei posti per i Curraturi 2026.");
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  };
+
+  const scrollToRegolamento = () => {
+    regolamentoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-orange-200 overflow-x-hidden">
       
-      {/* === HERO SECTION + QUICK INFO === */}
+      {/* === HERO SECTION === */}
       <section className="relative bg-slate-900 pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105 opacity-60" style={{ backgroundImage: `url(${Podistica})` }}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 via-slate-900/60 to-red-900/80"></div>
@@ -80,66 +90,40 @@ const CurraturiPage = () => {
         </div>
       </section>
 
-{/* === SEZIONE LOGO E SOCIAL (TUTTO SU UNA RIGA) === */}
-{/* === BANNER LOGHI E SOCIAL === */}
-{/* === BANNER LOGHI E SOCIAL (COLORI NATURALI E SENZA CONTORNI) === */}
-{/* === BANNER LOGHI E SOCIAL (3 LOGHI - COLORI NATURALI) === */}
-      <section className="relative z-30 py-10 bg-white border-b border-slate-100 w-full">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col items-center justify-center">
-          
-          {/* Contenitore Unico Centrato */}
-          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
-            
-            {/* Gruppo 3 Loghi (Senza bordi, colori naturali) */}
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-              <img 
-                src={comitato} 
-                alt="Logo Comitato" 
-                className="h-20 md:h-28 w-auto object-contain transition-transform hover:scale-105" 
-              />
-              <img 
-                src={podistica} 
-                alt="Logo Podistica" 
-                className="h-20 md:h-28 w-auto object-contain transition-transform hover:scale-105" 
-              />
-              <img 
-                src={comune} 
-                alt="Logo Sponsor/Partner" 
-                className="h-20 md:h-28 w-auto object-contain transition-transform hover:scale-105" 
-              />
+      {/* === BANNER LOGHI E SOCIAL (OTTIMIZZATO MOBILE) === */}
+      <section className="relative z-30 py-6 md:py-10 bg-white border-b border-slate-100 w-full">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex items-center justify-between md:justify-center gap-4 md:gap-16">
+            <div className="flex items-center justify-start md:justify-center gap-4 md:gap-12 flex-1 md:flex-none">
+              <img src={comitato} alt="Logo Comitato" className="h-12 md:h-28 w-auto object-contain transition-transform hover:scale-105" />
+              <img src={podistica} alt="Logo Podistica" className="h-12 md:h-28 w-auto object-contain transition-transform hover:scale-105" />
+              <img src={comune} alt="Logo Sponsor/Partner" className="h-12 md:h-28 w-auto object-contain transition-transform hover:scale-105" />
             </div>
-
-            {/* Separatore Verticale (visibile solo su desktop) */}
-            <div className="hidden lg:block w-px h-12 bg-slate-200"></div>
-
-            {/* Gruppo Social */}
-            <div className="flex items-center gap-6 md:gap-8">
-              {/* Facebook */}
-              <a href="#" className="group flex flex-col items-center gap-2">
-                <div className="p-3 text-slate-400 group-hover:text-blue-600 transition-all duration-300 transform group-hover:scale-110">
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <div className="hidden sm:block w-px h-12 bg-slate-200"></div>
+            <div className="flex items-center gap-4 md:gap-8 flex-shrink-0">
+              <a href="#" className="group flex flex-col items-center">
+                <div className="p-2 text-slate-400 group-hover:text-blue-600 transition-all duration-300 transform group-hover:scale-110">
+                  <svg width="24" height="24" className="md:w-[30px] md:h-[30px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                   </svg>
                 </div>
-                <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-blue-600 transition-colors">Facebook</span>
+                <span className="text-[7px] md:text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-blue-600">FB</span>
               </a>
-              
-              {/* Instagram */}
-              <a href="#" className="group flex flex-col items-center gap-2">
-                <div className="p-3 text-slate-400 group-hover:text-pink-600 transition-all duration-300 transform group-hover:scale-110">
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a href="#" className="group flex flex-col items-center">
+                <div className="p-2 text-slate-400 group-hover:text-pink-600 transition-all duration-300 transform group-hover:scale-110">
+                  <svg width="24" height="24" className="md:w-[30px] md:h-[30px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                   </svg>
                 </div>
-                <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-pink-600 transition-colors">Instagram</span>
+                <span className="text-[7px] md:text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-pink-600">IG</span>
               </a>
             </div>
-
           </div>
         </div>
       </section>
+
       {/* === VIDEO & DESCRIPTION === */}
       <section className="relative py-16 lg:py-24 px-6 md:px-8 overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0 bg-cover bg-fixed bg-center" style={{ backgroundImage: `url(${BackgroundOptions.descrizione.img})`, opacity: BackgroundOptions.descrizione.opacity / 100 }}></div>
@@ -164,7 +148,7 @@ const CurraturiPage = () => {
                 <div className="w-3 h-1 bg-red-500 rounded-full"></div>
               </div>
               <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter italic leading-none drop-shadow-lg">Cosa sono i <br/><span className="text-orange-500">Curraturi</span>?</h2>
-              <p className="text-base md:text-xl leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 italic drop-shadow-md opacity-90">I Curraturi rappresentano una tradizionale manifestazione religiosa che rievoca il ritrovamento del Monolito della Madonna della Coltura. L'evento ricorda il gesto del contadino che, pieno di gioia, corse verso il paese per annunciare la straordinaria scoperta della sacra immagine.</p>
+              <p className="text-base md:text-xl leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 italic drop-shadow-md opacity-90">I Curraturi rappresentano una tradizionale manifestazione religiosa che rievoca il ritrovamento del Monolito della Madonna della Coltura.</p>
               <div className="mt-8 pt-6 border-t border-white/20 inline-block text-orange-400 font-bold uppercase tracking-widest text-xs">Tradizione • Fede • Territorio</div>
             </div>
           </div>
@@ -178,7 +162,11 @@ const CurraturiPage = () => {
         </div>
         <div className="flex md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 px-6 md:max-w-7xl md:mx-auto">
           {locandine.map((url, index) => (
-            <div key={index} className="min-w-[85vw] md:min-w-0 snap-center bg-white p-3 rounded-[2rem] shadow-xl border border-slate-100 flex-shrink-0 flex items-center justify-center">
+            <div 
+              key={index} 
+              ref={index === 2 ? regolamentoRef : null} // Collega il ref alla terza locandina
+              className="min-w-[85vw] md:min-w-0 snap-center bg-white p-3 rounded-[2rem] shadow-xl border border-slate-100 flex-shrink-0 flex items-center justify-center"
+            >
                <div className="aspect-[2/3] w-full max-h-[65vh] md:max-h-none rounded-2xl overflow-hidden bg-slate-50 flex items-center justify-center">
                   <img src={url} alt={`Locandina ${index + 1}`} className="w-full h-full object-contain md:object-cover" />
                </div>
@@ -215,14 +203,33 @@ const CurraturiPage = () => {
         <div className="relative z-20 max-w-3xl mx-auto text-center flex flex-col items-center">
           <h2 className="text-4xl md:text-7xl font-black text-slate-900 mb-10 italic uppercase tracking-tighter leading-none text-center">Pronto a <br/><span className="text-orange-500">correre?</span></h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-orange-600 text-white px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-slate-900 transition-all shadow-2xl shadow-orange-900/40">Iscriviti Ora</button>
-            <button className="border-2 border-orange-600 text-orange-600 px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-orange-50 transition-all">Regolamento</button>
+            {/* Pulsante WhatsApp */}
+            <button 
+              onClick={handleWhatsAppClick}
+              className="bg-orange-600 text-white px-8 py-5 rounded-2xl font-black uppercase text-xs md:text-sm tracking-widest hover:bg-slate-900 transition-all shadow-2xl shadow-orange-900/40"
+            >
+              Verifica Disponibilità Posti
+            </button>
+            {/* Pulsante Regolamento */}
+            <button 
+              onClick={scrollToRegolamento}
+              className="border-2 border-orange-600 text-orange-600 px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-orange-50 transition-all"
+            >
+              Regolamento
+            </button>
           </div>
         </div>
       </section>
 
-      <footer className="py-12 text-center text-slate-400 text-[10px] font-black uppercase tracking-[0.4em] bg-slate-50 border-t border-slate-100">
-        © 2026 Podistica Parabita • Correre con passione
+      {/* === FOOTER === */}
+      <footer className="relative py-16 text-center overflow-hidden border-t border-slate-100">
+        <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${sfondo2})`, opacity: 0.70 }}></div>
+        <div className="absolute inset-0 z-10 bg-white/60"></div>
+        <div className="relative z-20 max-w-7xl mx-auto px-8">
+          <p className="text-slate-900 text-[10px] md:text-[12px] font-black uppercase tracking-[0.5em]">
+            © 2026 Podistica Parabita • Correre con passione
+          </p>
+        </div>
       </footer>
     </div>
   );
