@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const BackToHome = () => {
   const location = useLocation();
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Nasconde il tasto se siamo nella Homepage
-  if (location.pathname === '/') return null;
+  useEffect(() => {
+    // 1. Gestione apertura/chiusura Menu Navbar
+    const handleMenuToggle = (e) => {
+      setIsNavbarOpen(e.detail.isMenuOpen);
+    };
+
+    // 2. Gestione Scroll: scompare se scendiamo oltre 50px
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('menuToggle', handleMenuToggle);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('menuToggle', handleMenuToggle);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Nasconde se: 
+  // - Siamo in Home Page
+  // - Il menu Navbar è aperto
+  // - L'utente ha scrollato verso il basso
+  if (location.pathname === '/' || isNavbarOpen || isScrolled) return null;
 
   return (
     <div className="fixed top-24 left-4 z-[9999] animate-in fade-in slide-in-from-left-4 duration-500">

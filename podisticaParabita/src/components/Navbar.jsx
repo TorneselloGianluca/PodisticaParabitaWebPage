@@ -5,7 +5,11 @@ import { Menu, X, Home, BarChart3, Star, Footprints, Info, MessageCircle, Chevro
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // LOGICA AGGIUNTA: Avvisa gli altri componenti quando il menu si apre/chiude
   useEffect(() => {
+    const event = new CustomEvent('menuToggle', { detail: { isMenuOpen } });
+    window.dispatchEvent(event);
+
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -35,20 +39,17 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
           
           <Link to="/" onClick={() => setIsMenuOpen(false)} className="relative z-[210]">
-            {/* Modificato: text-blue-600 -> text-orange-600 */}
             <div className={`text-xl font-black tracking-tighter leading-none ${isMenuOpen ? 'text-white' : 'text-orange-600'}`}>
               PODISTICA<br/>
               <span className={`${isMenuOpen ? 'text-slate-500' : 'text-slate-400'} text-sm font-light tracking-widest uppercase`}>Parabita</span>
             </div>
           </Link>
 
-          {/* Navigazione Desktop */}
           <div className="hidden xl:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                /* Modificato: hover:text-orange-600 */
                 className="px-4 py-2 rounded-full text-sm font-bold text-slate-600 hover:text-orange-600 transition-all"
               >
                 {link.name}
@@ -57,13 +58,11 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:block relative z-[210]">
-            {/* Modificato: bg-orange-600, shadow-orange-100, hover:bg-orange-700 */}
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-orange-600 text-white px-6 py-2.5 rounded-full text-sm font-black uppercase tracking-wider shadow-lg shadow-orange-100 hover:bg-orange-700 transition-colors">
               Iscriviti
             </a>
           </div>
 
-          {/* Toggle Mobile */}
           <div className="xl:hidden relative z-[210]">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -75,10 +74,8 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Spaziatore fisso */}
       <div className="h-20 w-full"></div>
 
-      {/* Menu Mobile Overlay */}
       <div className={`fixed inset-0 z-[150] bg-slate-900 transition-transform duration-500 ease-in-out xl:hidden ${
         isMenuOpen ? 'translate-y-0' : '-translate-y-full'
       }`}>
@@ -95,7 +92,6 @@ const Navbar = () => {
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
                 <div className="flex items-center gap-4">
-                  {/* Modificato: text-orange-500 per le icone nel menu mobile */}
                   <span className="text-orange-500">{link.icon}</span>
                   <span className="text-xl font-black uppercase tracking-tight">{link.name}</span>
                 </div>
@@ -105,8 +101,6 @@ const Navbar = () => {
           </div>
 
           <div className={`mt-10 space-y-6 transition-all duration-700 delay-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}>
-            {/* Ho lasciato il bottone WhatsApp verde perché è il colore standard del brand, 
-                ma se preferisci arancione anche questo, cambia bg-green-500 in bg-orange-600 */}
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full bg-green-500 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-center flex items-center justify-center gap-3 shadow-xl active:scale-95 transition-transform">
               <MessageCircle size={24} /> Scrivici su WhatsApp
             </a>
