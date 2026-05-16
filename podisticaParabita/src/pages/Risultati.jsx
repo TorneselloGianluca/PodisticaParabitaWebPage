@@ -122,7 +122,7 @@ const Risultati = () => {
             </div>
 
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
-              <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
+              <div className="flex flex-col lg:flex-row items-center lg:items-center gap-12 lg:gap-16">
                 
                 {/* Immagine Atleta */}
                 <div className="relative shrink-0 w-full max-w-[320px] lg:max-w-[400px]">
@@ -154,8 +154,8 @@ const Risultati = () => {
                     </div>
                   </div>
 
-                  {/* INFO BOX */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-900/90 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[3rem] shadow-2xl">
+                  {/* INFO BOX CORRETTO PER PC */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-900/90 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[3rem] shadow-2xl items-center">
                     <div className="flex flex-col border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0">
                       <span className="text-[10px] font-black uppercase text-orange-500 tracking-[0.2em] mb-2">Città</span>
                       <span className="text-2xl md:text-3xl font-bold text-white uppercase">{atleta.dove}</span>
@@ -166,10 +166,11 @@ const Risultati = () => {
                       <span className="text-2xl md:text-3xl font-bold text-white uppercase">{atleta.data}</span>
                     </div>
 
+                    {/* Modificato: rimpicciolito su schermi larghi per evitare scatti sproporzionati */}
                     <div className="flex flex-col md:pl-6">
                       <span className="text-[10px] font-black uppercase text-orange-500 tracking-[0.2em] mb-2">Cronometro</span>
-                      <div className="flex items-center gap-3 text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter">
-                        <Timer className="text-orange-500" size={32} />
+                      <div className="flex items-center gap-2 text-4xl md:text-5xl lg:text-4xl font-black text-white tracking-tighter">
+                        <Timer className="text-orange-500 shrink-0" size={28} />
                         {atleta.tempo}
                       </div>
                     </div>
