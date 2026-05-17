@@ -6,35 +6,38 @@ import CalendarioPDF from '../assets/calendario.pdf';
 
 const ProssimeGare = () => {
  
+  // Inserisci qui il numero di telefono reale (con prefisso 39, senza spazi o il "+")
+  const numeroWhatsApp = "393317018865";
+
   const gareData = [
     {
       id: 1,
-      titolo: "1^ meeting provinciale pista",
-      data: "2026-05-02",
-      luogo: "Lecce, LE",
+      titolo: "9^ Urban Trail Leuca",
+      data: "2026-05-24",
+      luogo: "Santa Maria di Leuca, LE",
       ora: "09:00",
-      tipo: "Pista",
-      immagine: "https://www.liceodonmilani.it/wp-content/uploads/2021/06/Schermata-2018-01-22-alle-12.49.06-980x490-1.png",
+      tipo: "11,6 km",
+      immagine: "https://www.hdsalento.com/wp-content/uploads/2021/02/03122017-DJI_0184-1024x599.jpg",
       iscrizioniAperte: true
     },
     {
       id: 2,
-      titolo: "14^ stracittadina magliese",
-      data: "2026-05-03",
-      luogo: "Maglie, LE",
+      titolo: "5^ 34 Passo di Serena",
+      data: "2026-05-31",
+      luogo: "Galugnano, LE",
       ora: "08:30",
-      tipo: "10km",
-      immagine: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/28/4e/b8/maglie.jpg?w=1200&h=-1&s=1",
+      tipo: "9,9km",
+      immagine: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Galugnano_%28LE%29.JPG?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=original",
       iscrizioniAperte: true
     },
     {
       id: 3,
-      titolo: "Running in Salento in Pista",
-      data: "2026-05-07",
-      luogo: "Lecce, LE",
+      titolo: "14^ Trofeo Podistica unione dei comuni",
+      data: "2026-06-02",
+      luogo: "Melissano, LE",
       ora: "08:30",
-      tipo: "varie",
-      immagine: "https://www.liceodonmilani.it/wp-content/uploads/2021/06/Schermata-2018-01-22-alle-12.49.06-980x490-1.png",
+      tipo: "9,6km",
+      immagine: "https://www.summerinitaly.com/images/photos/travel_guide/3784.jpg",
       iscrizioniAperte: true
     }
   ];
@@ -47,6 +50,13 @@ const ProssimeGare = () => {
       month: 'short',
       year: 'numeric'
     });
+  };
+
+  // Funzione per generare il testo e il link di WhatsApp
+  const generaLinkWhatsApp = (titoloGara, dataGara) => {
+    const dataFormattata = formattaData(dataGara);
+    const messaggio = `Ciao, vorrei iscrivermi alla gara di "${titoloGara}" del giorno ${dataFormattata}`;
+    return `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(messaggio)}`;
   };
 
   return (
@@ -113,16 +123,24 @@ const ProssimeGare = () => {
                   </div>
                 </div>
 
-                <button 
-                  disabled={!gara.iscrizioniAperte}
-                  className={`w-full py-3 rounded-xl font-bold transition-all ${
-                    gara.iscrizioniAperte 
-                    ? 'bg-orange-600 text-white hover:bg-orange-700 shadow-lg shadow-orange-100' 
-                    : 'bg-slate-100 text-slate-400 cursor-not-allowed'
-                  }`}
-                >
-                  {gara.iscrizioniAperte ? 'Iscriviti Ora' : 'Iscrizioni Chiuse'}
-                </button>
+                {/* Tasto Iscrizione Dinamico (Trasformato in tag link <a>) */}
+                {gara.iscrizioniAperte ? (
+                  <a 
+                    href={generaLinkWhatsApp(gara.titolo, gara.data)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 rounded-xl font-bold text-center bg-orange-600 text-white hover:bg-orange-700 shadow-lg shadow-orange-100 transition-all block"
+                  >
+                    Iscriviti Ora
+                  </a>
+                ) : (
+                  <button 
+                    disabled
+                    className="w-full py-3 rounded-xl font-bold bg-slate-100 text-slate-400 cursor-not-allowed block"
+                  >
+                    Iscrizioni Chiuse
+                  </button>
+                )}
               </div>
             </div>
           ))}

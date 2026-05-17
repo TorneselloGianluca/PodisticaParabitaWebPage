@@ -9,11 +9,11 @@ const Calendario = () => {
   const gareFuture = [
     {
       id: 1,
-      titolo: "12^ Memorial Marcello ed Osvaldo Longo",
-      luogo: "Calimera (LE)",
-      data: "12 Aprile 2026",
+      titolo: "9^ Urban Trail Leuca",
+      luogo: "Santa Maria di Leuca (LE)",
+      data: "24 Maggio 2026",
       ora: "08:30",
-      tipo: "Strada - 10km",
+      tipo: " 11,6 km",
       status: "Iscrizioni Aperte"
     },
     {

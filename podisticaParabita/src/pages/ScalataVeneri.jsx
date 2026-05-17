@@ -77,7 +77,7 @@ const ScalataVeneri = () => {
             <div className="text-center md:border-r border-slate-200/60 last:border-0 flex flex-col justify-center">
               <Calendar className="mx-auto text-orange-500 mb-2" size={24} />
               <p className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Data Evento</p>
-              <p className="font-black text-slate-900 text-sm md:text-base">14 Giugno 2026</p>
+              <p className="font-black text-slate-900 text-sm md:text-base">27 Settembre 2026</p>
             </div>
             <div className="text-center md:border-r border-slate-200/60 last:border-0 flex flex-col justify-center">
               <Clock className="mx-auto text-orange-500 mb-2" size={24} />
