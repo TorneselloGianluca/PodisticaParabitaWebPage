@@ -67,7 +67,7 @@ const CurraturiPage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-8 text-center text-white mb-16">
           <span className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.3em] mb-6">Edizione 2026</span>
           <h1 className="text-6xl lg:text-9xl font-black italic tracking-tighter drop-shadow-2xl uppercase text-white">CURRATURI</h1>
-          <p className="mt-6 text-lg md:text-xl text-slate-100 max-w-2xl mx-auto font-medium leading-relaxed italic">Il rosso della passione, il verde della nostra terra, il bianco della libertà.</p>
+          <p className="mt-6 text-lg md:text-xl text-slate-100 max-w-2xl mx-auto font-medium leading-relaxed italic">In corsa con la storia, uniti nella devozione..</p>
         </div>
         <div className="relative z-20 max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 shadow-2xl rounded-3xl overflow-hidden bg-white border border-slate-100">
@@ -148,7 +148,7 @@ const CurraturiPage = () => {
                 <div className="w-3 h-1 bg-red-500 rounded-full"></div>
               </div>
               <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter italic leading-none drop-shadow-lg">Cosa sono i <br/><span className="text-orange-500">Curraturi</span>?</h2>
-              <p className="text-base md:text-xl leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 italic drop-shadow-md opacity-90">I Curraturi rappresentano una tradizionale manifestazione religiosa che rievoca il ritrovamento del Monolito della Madonna della Coltura.</p>
+              <p className="text-base md:text-xl leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 italic drop-shadow-md opacity-90">Un evento che affonda le radici nella storia e nella devozione di Parabita: la manifestazione celebra il momento in cui fu scoperto il Monolito della Madonna della Coltura, riproponendo la corsa festosa del contadino che per primo ne diede l'annuncio. Lontano dall'essere una semplice gara podistica, l'appuntamento rappresenta un omaggio corale alla Vergine, unendo i cittadini in un'atmosfera di gioiosa fraternità.</p>
               <div className="mt-8 pt-6 border-t border-white/20 inline-block text-orange-400 font-bold uppercase tracking-widest text-xs">Tradizione • Fede • Territorio</div>
             </div>
           </div>
