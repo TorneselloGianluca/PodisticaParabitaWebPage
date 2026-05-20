@@ -7,7 +7,7 @@ import {
   Pause 
 } from 'lucide-react';
 
-// === ASSETS ===
+
 import Podistica from '../assets/curraturi/curraturi.jpg'; 
 import RaceVideo from '../assets/curraturi/curraturi.mp4'; 
 import locandina1 from '../assets/curraturi/locandina1.png';
@@ -25,10 +25,10 @@ const CurraturiPage = () => {
     atmosfera: { img: sfondo2, opacity: 30 },   
   };
 
-  // Hooks & Refs
+
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-  const regolamentoRef = useRef(null); // Riferimento per la terza locandina
+  const regolamentoRef = useRef(null); 
 
   const locandine = [locandina1, locandina2, locandina3];
   

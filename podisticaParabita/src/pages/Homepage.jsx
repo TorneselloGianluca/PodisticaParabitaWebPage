@@ -18,12 +18,16 @@ import Contatti from '../components/Contatti';
 import Video from '../assets/video1.mp4';
 import CaroselloImmagini from '../components/CaroselloImmagini';
 import Social from '../components/Social';
-import BackToHome from '../components/BackToHome'; // <--- AGGIUNTO IMPORT
+import BackToHome from '../components/BackToHome'; 
+import StoriaTimeline from '../components/StoriaTimeline';
+
 
 import sponsor1 from '../assets/sponsor/1.png';
 import sponsor2 from '../assets/sponsor/2.png';
 import sponsor3 from '../assets/sponsor/3.png';
 import sponsor4 from '../assets/sponsor/4.png';
+
+
 
 const Homepage = () => {
 
@@ -127,11 +131,15 @@ const Homepage = () => {
         </div> 
       </section>
 
+      
+        
       <CaroselloImmagini />
 
       <div className="relative z-20">
         <LogoSection/>
       </div>
+
+      <StoriaTimeline />
 
       <Informazioni />
 
@@ -154,6 +162,8 @@ const Homepage = () => {
       <Team />
       <Social />
   
+
+
 
       {/* === FOOTER ISTITUZIONALE === */}
       <footer className="bg-slate-900 text-white pt-20 pb-10">
