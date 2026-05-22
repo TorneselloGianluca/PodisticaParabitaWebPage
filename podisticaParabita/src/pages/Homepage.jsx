@@ -7,7 +7,8 @@ import {
   MapPin, 
   Quote, 
   Share2, 
-  Globe 
+  Globe, 
+  Shirt
 } from 'lucide-react';
 import Team from '../components/Team';
 import ProssimeGare from '../components/ProssimeGare';
@@ -21,13 +22,15 @@ import Social from '../components/Social';
 import BackToHome from '../components/BackToHome'; 
 import StoriaTimeline from '../components/StoriaTimeline';
 
+import maglia1 from '../assets/download.mp4';
+import maglia2 from '../assets/maglia.png';
 
 import sponsor1 from '../assets/sponsor/1.png';
 import sponsor2 from '../assets/sponsor/2.png';
 import sponsor3 from '../assets/sponsor/3.png';
 import sponsor4 from '../assets/sponsor/4.png';
 
-
+import primoVideo from '../assets/videoufficiale.mp4';
 
 const Homepage = () => {
 
@@ -63,15 +66,24 @@ const Homepage = () => {
         `}
       </style>
 
-      {/* === HERO SECTION === */}
-      <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-end lg:items-center bg-slate-900 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-[center_left_25%] lg:bg-center bg-no-repeat transition-transform duration-1000"
-          style={{ backgroundImage: `url(${Podistica})` }}
-        ></div>
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* === HERO SECTION CON SFONDO VIDEO IN LOOP === */}
+      <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-end lg:items-center bg-slate-950 overflow-hidden">
+        {/* Tag Video di Sfondo */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+        >
+          <source src={primoVideo} type="video/mp4" />
+        </video>
+        
+        {/* Overlay scuro per non far confondere le scritte con il video sotto */}
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
 
-        <div className="relative z-10 px-6 py-12 md:py-20 lg:py-40 max-w-7xl mx-auto w-full">
+        {/* Contenuto testuale */}
+        <div className="relative z-20 px-6 py-12 md:py-20 lg:py-40 max-w-7xl mx-auto w-full">
           <div className="max-w-3xl text-white">
             <div className="mb-6">
               <span className="inline-flex items-center gap-2 bg-orange-600/40 text-orange-100 px-4 py-1.5 rounded-full text-[10px] md:text-sm font-black tracking-widest uppercase backdrop-blur-md border border-orange-500/30">
@@ -131,8 +143,6 @@ const Homepage = () => {
         </div> 
       </section>
 
-      
-        
       <CaroselloImmagini />
 
       <div className="relative z-20">
@@ -158,12 +168,58 @@ const Homepage = () => {
         </div>
       </section>
 
+      {/* === NUOVA SEZIONE: LA NOSTRA PELLE (Testo a Sinistra, Video a Destra) === */}
+      <section className="bg-slate-950 text-white py-20 md:py-28 px-6 relative overflow-hidden border-t border-white/5">
+        {/* Elemento decorativo di sfondo (sfumatura arancio soffusa) */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-orange-600/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* PARTE SINISTRA: TITOLO E DESCRIZIONE */}
+            <div className="lg:col-span-5 text-center lg:text-left space-y-6">
+              <div className="inline-flex items-center gap-3 bg-orange-500/10 border border-orange-500/20 px-4 py-2 rounded-xl">
+                <Shirt size={16} className="text-orange-500" />
+                <span className="text-orange-500 font-black uppercase tracking-[0.25em] text-[10px]">Kit Ufficiale 2026</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">
+                LA NOSTRA <br />
+                <span className="text-orange-500 italic">PELLE</span>
+              </h2>
+              
+              <div className="w-16 h-1 bg-orange-500 mx-auto lg:mx-0"></div>
+              
+              <p className="text-slate-400 font-medium text-base md:text-lg leading-relaxed">
+                I nostri colori, la nostra identità. Indossare questa maglia significa farsi portavoce di una storia di passione, fatica e traguardi condivisi lungo le strade del Salento. Progettata per gli atleti, onorata da tutta la squadra.
+              </p>
+            </div>
+
+            {/* PARTE DESTRA: VIDEO PULITO (Senza descrizioni sopra) */}
+            <div className="lg:col-span-7 w-full">
+              <div className="relative group aspect-video rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-slate-900">
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                >
+                  <source src={maglia1} type="video/mp4" />
+                </video>
+                
+                {/* Overlay gradiente leggerissimo solo per dare profondità cinematografica ai bordi */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <ProssimeGare />
       <Team />
       <Social />
-  
-
-
 
       {/* === FOOTER ISTITUZIONALE === */}
       <footer className="bg-slate-900 text-white pt-20 pb-10">
