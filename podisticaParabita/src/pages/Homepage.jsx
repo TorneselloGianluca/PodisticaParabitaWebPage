@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { 
   Activity, 
   Award, 
@@ -24,6 +24,7 @@ import StoriaTimeline from '../components/StoriaTimeline';
 
 import maglia1 from '../assets/download.mp4';
 import maglia2 from '../assets/maglia.png';
+import fotoSquadra from '../assets/fotoSquadra.jpeg';
 
 import sponsor1 from '../assets/sponsor/1.png';
 import sponsor2 from '../assets/sponsor/2.png';
@@ -33,6 +34,14 @@ import sponsor4 from '../assets/sponsor/4.png';
 import primoVideo from '../assets/videoufficiale.mp4';
 
 const Homepage = () => {
+
+  // Riferimenti per lo scorrimento dei pulsanti
+  const chiSiamoRef = useRef(null);
+  const prossimeGareRef = useRef(null);
+
+  const eseguiScroll = (riferimento) => {
+    riferimento.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
 
   const sponsorLogos = [
     { id: 2, name: "Sponsor 2", logo: sponsor2 },
@@ -98,10 +107,16 @@ const Homepage = () => {
               Unisciti alla nostra community. Che tu sia un professionista o un amatore, troverai la carica giusta per correre nel cuore del Salento.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <button className="bg-orange-600 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-orange-700 transition-all flex items-center justify-center gap-3 shadow-2xl shadow-orange-600/40 w-full sm:w-auto">
+              <button 
+                onClick={() => eseguiScroll(prossimeGareRef)} 
+                className="bg-orange-600 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-orange-700 transition-all flex items-center justify-center gap-3 shadow-2xl shadow-orange-600/40 w-full sm:w-auto"
+              >
                 Prossima Gara <ChevronRight size={20} />
               </button>
-              <button className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all w-full sm:w-auto">
+              <button 
+                onClick={() => eseguiScroll(chiSiamoRef)} 
+                className="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all w-full sm:w-auto"
+              >
                 Chi Siamo
               </button>
             </div>
@@ -124,26 +139,35 @@ const Homepage = () => {
         </div>
       </div>
 
-      {/* === CHI SIAMO INTRO === */}
-      <section className="py-16 md:py-24 px-6 bg-white relative">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* === CHI SIAMO INTRO CON FOTO DI SFONDO IN TRASPARENZA === */}
+      <section ref={chiSiamoRef} className="py-24 md:py-36 px-6 bg-slate-950 relative overflow-hidden border-b border-white/5 flex items-center min-h-[50vh]">
+        {/* Immagine inserita dietro al testo in trasparenza calibrata */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={fotoSquadra} 
+            alt="Podistica Sfondo Intro" 
+            className="w-full h-full object-cover opacity-100 object-center"
+          />
+          {/* Overlay scuro radiale/lineare per sfumare i lati e concentrare lo sguardo al centro */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/60 to-slate-950" />
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="flex justify-center mb-6">
-            <div className="bg-orange-50 p-4 rounded-full text-orange-600">
-              <Quote size={32} fill="currentColor" className="opacity-20" />
+            <div className="bg-orange-500/10 p-4 rounded-full text-orange-500 border border-orange-500/20">
+              <Quote size={32} fill="currentColor" className="opacity-40" />
             </div>
           </div>
-          <h2 className="text-xs font-black uppercase tracking-[0.3em] text-orange-600 mb-4">Oltre la corsa</h2>
-          <p className="text-2xl md:text-4xl font-bold text-slate-900 leading-tight tracking-tighter italic">
-            "La ASD Podistica Parabita è <span className="text-orange-600 font-black">una associazione sportiva dilettantistica nel cuore del Salento.</span> Da oltre quarant'anni corriamo per promuovere lo sport come stile di vita."
+          <h2 className="text-xs font-black uppercase tracking-[0.3em] text-orange-500 mb-4">Oltre la corsa</h2>
+          <p className="text-2xl md:text-4xl font-bold text-white leading-tight tracking-tighter italic drop-shadow-md">
+            "La ASD Podistica Parabita è <span className="text-orange-500 font-black">una associazione sportiva dilettantistica nel cuore del Salento.</span> Da oltre quarant'anni corriamo per promuovere lo sport come stile di vita."
           </p>
           <div className="mt-8 flex justify-center gap-2">
-            <span className="h-1.5 w-12 bg-orange-600 rounded-full"></span>
-            <span className="h-1.5 w-4 bg-orange-200 rounded-full"></span>
+            <span className="h-1.5 w-12 bg-orange-500 rounded-full"></span>
+            <span className="h-1.5 w-4 bg-orange-500/30 rounded-full"></span>
           </div>
         </div> 
       </section>
-
-      <CaroselloImmagini />
 
       <div className="relative z-20">
         <LogoSection/>
@@ -167,6 +191,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+      
 
       {/* === NUOVA SEZIONE: LA NOSTRA PELLE (Testo a Sinistra, Video a Destra) === */}
       <section className="bg-slate-950 text-white py-20 md:py-28 px-6 relative overflow-hidden border-t border-white/5">
@@ -217,7 +242,12 @@ const Homepage = () => {
         </div>
       </section>
 
-      <ProssimeGare />
+      {/* === SEZIONE PROSSIME GARE === */}
+      <section ref={prossimeGareRef}>
+        <ProssimeGare />
+      </section>
+
+
       <Team />
       <Social />
 
