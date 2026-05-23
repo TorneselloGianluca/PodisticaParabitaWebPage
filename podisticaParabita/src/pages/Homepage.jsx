@@ -21,6 +21,8 @@ import CaroselloImmagini from '../components/CaroselloImmagini';
 import Social from '../components/Social';
 import BackToHome from '../components/BackToHome'; 
 import StoriaTimeline from '../components/StoriaTimeline';
+import Classifica from '../components/Classifica';
+
 
 import maglia1 from '../assets/download.mp4';
 import maglia2 from '../assets/maglia.png';
@@ -30,6 +32,10 @@ import sponsor1 from '../assets/sponsor/1.png';
 import sponsor2 from '../assets/sponsor/2.png';
 import sponsor3 from '../assets/sponsor/3.png';
 import sponsor4 from '../assets/sponsor/4.png';
+
+import logoFIDAL from '../assets/loghi_associazioni/Coni.png';
+import logoCONI from '../assets/loghi_associazioni/CSI.jpg';
+import logoCSI from '../assets/loghi_associazioni/FIDAL.svg';
 
 import primoVideo from '../assets/videoufficiale.mp4';
 
@@ -139,8 +145,9 @@ const Homepage = () => {
         </div>
       </div>
 
-      {/* === CHI SIAMO INTRO CON FOTO DI SFONDO IN TRASPARENZA === */}
-      <section ref={chiSiamoRef} className="py-24 md:py-36 px-6 bg-slate-950 relative overflow-hidden border-b border-white/5 flex items-center min-h-[50vh]">
+    {/* === CHI SIAMO INTRO CON FOTO DI SFONDO IN TRASPARENZA === */}
+      {/* Sostituito items-center con items-start e aumentato il padding top (pt-32) per spostare la scritta più in alto */}
+      <section ref={chiSiamoRef} className="pt-32 pb-24 md:pt-40 md:pb-36 px-6 bg-slate-950 relative overflow-hidden border-b border-white/5 flex items-start min-h-[50vh]">
         {/* Immagine inserita dietro al testo in trasparenza calibrata */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -148,8 +155,8 @@ const Homepage = () => {
             alt="Podistica Sfondo Intro" 
             className="w-full h-full object-cover opacity-100 object-center"
           />
-          {/* Overlay scuro radiale/lineare per sfumare i lati e concentrare lo sguardo al centro */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/60 to-slate-950" />
+          {/* MODIFICATO: la sfumatura scura va da slate-950 (in alto) a transparent (in basso) senza ritornare scura */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/40 to-transparent" />
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -160,7 +167,7 @@ const Homepage = () => {
           </div>
           <h2 className="text-xs font-black uppercase tracking-[0.3em] text-orange-500 mb-4">Oltre la corsa</h2>
           <p className="text-2xl md:text-4xl font-bold text-white leading-tight tracking-tighter italic drop-shadow-md">
-            "La ASD Podistica Parabita è <span className="text-orange-500 font-black">una associazione sportiva dilettantistica nel cuore del Salento.</span> Da oltre quarant'anni corriamo per promuovere lo sport come stile di vita."
+            "La ASD Podistica Parabita è <span className="text-orange-500 font-black">una associazione sportiva dilettantistica nel cuore del Salento.</span> Da oltre quarant'anni corriamo per promuovere lo sport como stile di vita."
           </p>
           <div className="mt-8 flex justify-center gap-2">
             <span className="h-1.5 w-12 bg-orange-500 rounded-full"></span>
@@ -168,6 +175,9 @@ const Homepage = () => {
           </div>
         </div> 
       </section>
+
+      <Classifica />
+
 
       <div className="relative z-20">
         <LogoSection/>
@@ -275,24 +285,23 @@ const Homepage = () => {
                 ASD Podistica <span className="text-orange-500">Parabita</span>
               </h3>
               <ul className="text-slate-400 text-sm space-y-2 font-medium">
-                <li>Sede Legale: Via Roma, 1 - 73052 Parabita (LE)</li>
-                <li>Codice Fiscale: 90001234567</li>
-                <li>P. IVA: 01234567890</li>
-                <li>Iscr. Registro RASD: n. 123456</li>
+                <li>Sede Legale: Via Pio XII, 107 - 73052 Parabita (LE)</li>
+                <li>Codice Fiscale: 04444040754</li>
+                <li>P. IVA: 04444040754</li>
+                <li>Iscr. Registro CONI: FSNFIDALLE318 n^49983</li>
                 <li>PEC: podisticaparabita@pec.it</li>
+                <li>Codice affiliazione FIDAL: LE318</li>
+                <li>Codice affiliazione CSI: 186002277</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-sm font-black uppercase tracking-widest mb-6 text-orange-500">Trasparenza</h4>
-              <ul className="text-slate-400 text-sm space-y-4 font-bold uppercase tracking-tight">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors underline decoration-orange-500/50">Contributi Pubblici (L. 124/2017)</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Modello Organizzativo (MOG)</a></li>
+              <h4 className="text-sm font-black uppercase tracking-widest mb-6 text-orange-500">Contatti</h4>
+              <ul className="text-slate-400 text-sm space-y-4 font-bold">
+                <li>Mail: podisticaparabita@gmail.com</li>
+                <li>Numero telefono: +39 3317018865</li>
               </ul>
             </div>
-
             <div>
               <h4 className="text-sm font-black uppercase tracking-widest mb-6 text-orange-500">Social & Utility</h4>
               <div className="flex gap-4 mb-6">
