@@ -43,7 +43,7 @@ const Social = () => {
     },
     {
       name: "Pagina FIDAL",
-      handle: "Codice LE605",
+      handle: "Codice LE318",
       desc: "Risultati ufficiali e scheda tecnica federale.",
       href: "https://www.fidal.it/societa/A.S.D.-PODISTICA-PARABITA/LE605",
       cardBg: "bg-gradient-to-br from-slate-900 via-blue-950 to-black",

@@ -24,6 +24,8 @@ import StoriaTimeline from '../components/StoriaTimeline';
 import Classifica from '../components/Classifica';
 
 
+
+
 import maglia1 from '../assets/download.mp4';
 import maglia2 from '../assets/maglia.png';
 import fotoSquadra from '../assets/fotoSquadra.jpeg';
