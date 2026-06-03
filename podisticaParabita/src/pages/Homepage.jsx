@@ -178,7 +178,7 @@ const Homepage = () => {
         </div> 
       </section>
 
-      <Classifica />
+
 
 
       <div className="relative z-20">
