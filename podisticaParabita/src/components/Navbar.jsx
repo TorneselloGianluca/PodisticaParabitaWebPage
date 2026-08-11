@@ -24,11 +24,11 @@ const Navbar = () => {
     { name: 'Home', href: '/', icon: <Home size={24} /> },
     { name: 'Risultati', href: '/risultati', icon: <BarChart3 size={24} /> },
     { name: 'Scalata Veneri', href: '/scalata', icon: <Star size={24} /> },
-    { name: 'Sponsor', href: '/sponsor', icon: <Info size={24} /> },
+    //{ name: 'Sponsor', href: '/sponsor', icon: <Info size={24} /> },
     { name: 'Migliori Momenti', href: '/miglioriMomenti', icon: <Camera size={24} /> },
     { name: 'Walking', href: '/walking', icon: <Footprints size={24} /> },
     { name: 'Curraturi', href: '/curraturi', icon: <Footprints size={24} /> }, 
-    { name: 'Atleti', href: '/album', icon: <Users size={24} /> }
+    //{ name: 'Atleti', href: '/album', icon: <Users size={24} /> }
   ];
 
   return (

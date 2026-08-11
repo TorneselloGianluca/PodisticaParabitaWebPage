@@ -15,6 +15,9 @@ import {
 
 import veneri from '../assets/veneri/veneri.png';
 
+
+import videoVeneri from '../assets/scalatavideo.mp4';
+
 import BannerScalata from '../assets/podistica.png'; 
 import MappaPercorso from '../assets/mappa.png'; 
 import Contatti from '../components/Contatti';
@@ -26,9 +29,15 @@ import foto2 from '../assets/walking/walking2.png';
 import foto3 from '../assets/walking/walking3.png';
 import foto4 from '../assets/walking/walking4.png';
 
+import logoVeneri from '../assets/logoveneri.png'; 
+
 // === IMPORT SFONDI PER EFFETTI AD ALTO IMPATTO ===
 import vicinoSfondo from '../assets/curraturi/sfondo1.png'; // Usato come sfondo per le specifiche
 import atmosferaSfondo from '../assets/curraturi/sfondo2.png'; // Usato dietro la sezione YouTube
+
+import locandina1 from '../assets/locandina1.png'; 
+import locandina2 from '../assets/locandina2.png';
+
 
 const ScalataVeneri = () => {
   // Stato per il carosello foto
@@ -39,12 +48,13 @@ const ScalataVeneri = () => {
   const nextFoto = () => setCurrentFoto((prev) => (prev === fotoGallery.length - 1 ? 0 : prev + 1));
   const prevFoto = () => setCurrentFoto((prev) => (prev === 0 ? fotoGallery.length - 1 : prev - 1));
 
+
   // Array Video YouTube personalizzato per la Scalata delle Veneri
-  const youtubeVideos = [
-    { id: "ihuhjNRK9I0", title: "Edizione Passata - Highlights" },
-    { id: "XCrmoWoevq8", title: "Il Percorso della Serra" },
-    { id: "T2ug1_w9Lqw", title: "Emozioni in Corsa" }
-  ];
+    const youtubeVideos = [
+      { id: "1rSrcn-rsGM", title: "Edizione 2024" },
+      { id: "bepVLgrOxfw", title: "Ottava edizione" },
+      { id: "VF-Fn0r7gJ0", title: "Il percorso" }
+    ];
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans overflow-x-hidden selection:bg-orange-200">
@@ -82,7 +92,7 @@ const ScalataVeneri = () => {
             <div className="text-center md:border-r border-slate-200/60 last:border-0 flex flex-col justify-center">
               <Clock className="mx-auto text-orange-500 mb-2" size={24} />
               <p className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Orario Partenza</p>
-              <p className="font-black text-slate-900 text-sm md:text-base">Ore 18:30</p>
+              <p className="font-black text-slate-900 text-sm md:text-base">Ore 9:00</p>
             </div>
             <div className="text-center md:border-r border-slate-200/60 last:border-0 flex flex-col justify-center">
               <Mountain className="mx-auto text-orange-500 mb-2" size={24} />
@@ -93,6 +103,78 @@ const ScalataVeneri = () => {
               <Trophy className="mx-auto text-orange-500 mb-2" size={24} />
               <p className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Difficoltà Gara</p>
               <p className="font-black text-orange-600 text-sm md:text-base">Media / Alta</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{/* === SEZIONE VIDEO PRESENTAZIONE === */}
+      <section className="relative py-20 px-6 bg-slate-50 border-b border-slate-200 overflow-hidden">
+        {/* Sfondo sfumato decorativo per dare profondità */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-5xl mx-auto">
+          {/* Intestazione della sezione */}
+          <div className="text-center mb-10 space-y-3">
+            <span className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 border border-orange-500/20 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.25em]">
+              <Play size={14} fill="currentColor" /> TRAILER Ufficiale
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-slate-950">
+              Guarda l'Anteprima <br />
+              <span className="text-orange-500 italic">Della Corsa</span>
+            </h2>
+            <div className="w-12 h-1 bg-orange-500 mx-auto rounded-full" />
+          </div>
+
+          {/* Box Video con effetto Glow & Cornice */}
+          <div className="relative group rounded-[2.5rem] p-2 bg-gradient-to-b from-orange-500/20 via-slate-200 to-transparent shadow-2xl">
+            <div className="relative aspect-video w-full rounded-[2.2rem] overflow-hidden bg-slate-950 shadow-inner">
+              <video 
+                src={videoVeneri} 
+                controls 
+                autoPlay 
+                muted 
+                loop 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
+              >
+                Il tuo browser non supporta il tag video.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === SEZIONE LOCANDINE === */}
+      <section className="py-16 px-6 bg-slate-100 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-orange-500">
+              scopri la nuova edizione
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mt-2 text-slate-950">
+              SCALATA DELLE VENERI 2026
+            </h2>
+            <div className="w-12 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+          </div>
+
+          {/* Griglia 2 Colonne */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Prima Locandina */}
+            <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
+              <img 
+                src={locandina1} 
+                alt="Locandina Ufficiale 1" 
+                className="w-full h-auto object-contain rounded-2xl"
+              />
+            </div>
+
+            {/* Seconda Locandina */}
+            <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
+              <img 
+                src={locandina2} 
+                alt="Locandina Ufficiale 2" 
+                className="w-full h-auto object-contain rounded-2xl"
+              />
             </div>
           </div>
         </div>
@@ -116,7 +198,7 @@ const ScalataVeneri = () => {
 
             {/* Contenuto testuale sopraelevato rispetto all'immagine tramite z-10 */}
             <div className="relative z-10 space-y-6">
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-orange-500 block">La gara di Parabita</span>
+              <span className="text-xs font-black uppercase tracking-[0.2em] text-orange-500 block">cosa è la scalata delle veneri?</span>
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none text-slate-950">
                  Scalata delle <br/><span className="text-orange-500 underline decoration-4 underline-offset-8">Veneri</span>
               </h2>
@@ -152,49 +234,7 @@ const ScalataVeneri = () => {
         </div>
       </section>
 
-      {/* === SEZIONE CAROSELLO FOTO COMMUNITY === */}
-      <section className="pb-24 px-6 bg-slate-50 text-slate-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-orange-500">Galleria Emozioni</span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mt-2 text-slate-950">La Scalata in Immagini</h2>
-            <div className="w-12 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
-          </div>
 
-          <div className="relative aspect-[16/9] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 group">
-            <img 
-              src={fotoGallery[currentFoto]} 
-              alt={`Scalata Gallery ${currentFoto + 1}`} 
-              className="w-full h-full object-cover transition-all duration-700 ease-in-out"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
-
-            {/* Frecce Navigazione */}
-            <button 
-              onClick={prevFoto}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 text-slate-950 hover:bg-orange-600 hover:text-white transition-all active:scale-95 md:opacity-0 group-hover:opacity-100 shadow-md"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={nextFoto}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 text-slate-950 hover:bg-orange-600 hover:text-white transition-all active:scale-95 md:opacity-0 group-hover:opacity-100 shadow-md"
-            >
-              <ChevronRight size={24} />
-            </button>
-
-            {/* Indicatori Lineari */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-              {fotoGallery.map((_, idx) => (
-                <div 
-                  key={idx}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${currentFoto === idx ? 'bg-orange-500 w-8' : 'bg-white/40 w-2'}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* === DETTAGLI TECNICI CON IMMAGINE DI SFONDO === */}
       <section className="relative py-28 px-6 overflow-hidden bg-slate-950">

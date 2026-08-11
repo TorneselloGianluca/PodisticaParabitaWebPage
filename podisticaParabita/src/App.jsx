@@ -15,7 +15,7 @@ import ScalataVeneri from './pages/ScalataVeneri';
 import CurraturiPage from './pages/CurraturiPage';
 import MiglioriMomenti from './pages/MiglioriMomenti';
 import Album from './pages/Album';
-import Cookie from './components/Cookie';
+
 
 
 function ScrollToTop() {
@@ -52,7 +52,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
 
       </Routes>
-        <Cookie />
+      
     </Router>
   );
 }
