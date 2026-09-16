@@ -1,48 +1,192 @@
 import React from 'react';
-import { ExternalLink, Star, Handshake, ArrowRight } from 'lucide-react';
+import { Star, Award, Shield, ArrowRight } from 'lucide-react';
 
-import sponsor1 from '../assets/sponsor/1.png';
-import sponsor2 from '../assets/sponsor/2.png';
-import sponsor3 from '../assets/sponsor/3.png';
-import sponsor4 from '../assets/sponsor/4.png';
+//import sponsor A
+import sponsor1 from '../assets/sponsorA/Sponsor1.png';
+import sponsor2 from '../assets/sponsorA/Sponsor2.png';
+import sponsor3 from '../assets/sponsorA/Sponsor3.png';
+import sponsor4 from '../assets/sponsorA/Sponsor4.png';
+import sponsor5 from '../assets/sponsorA/Sponsor5.png';
+import sponsor6 from '../assets/sponsorA/Sponsor6.png';
+import sponsor7 from '../assets/sponsorA/Sponsor7.png';
+import sponsor8 from '../assets/sponsorA/Sponsor8.png';
+import sponsor9 from '../assets/sponsorA/Sponsor9.png';
+import sponsor10 from '../assets/sponsorA/Sponsor10.png';
+import sponsor11 from '../assets/sponsorA/Sponsor11.png';
+import sponsor12 from '../assets/sponsorA/Sponsor12.png';
+import sponsor13 from '../assets/sponsorA/Sponsor13.png';
 
-// 1. IMPORTA QUI LA FOTO DI SFONDO DIETRO TUTTO IL SITO
+//import sponsor B
+import sponsor14 from '../assets/sponsorB/Sponsor1.png';
+import sponsor15 from '../assets/sponsorB/Sponsor2.png';
+import sponsor16 from '../assets/sponsorB/Sponsor3.png';
+import sponsor17 from '../assets/sponsorB/Sponsor4.png';
+import sponsor18 from '../assets/sponsorB/Sponsor5.png';
+import sponsor19 from '../assets/sponsorB/Sponsor6.png';
+import sponsor20 from '../assets/sponsorB/Sponsor7.png';
+import sponsor21 from '../assets/sponsorB/Sponsor8.png';
+import sponsor22 from '../assets/sponsorB/Sponsor9.png';
+import sponsor23 from '../assets/sponsorB/Sponsor10.png';
+import sponsor24 from '../assets/sponsorB/Sponsor11.png';
+import sponsor25 from '../assets/sponsorB/Sponsor12.png';
+import sponsor26 from '../assets/sponsorB/Sponsor13.png';
+import sponsor27 from '../assets/sponsorB/Sponsor14.png';
+import sponsor28 from '../assets/sponsorB/Sponsor15.png';
+
+//import sponsor C
+import sponsor29 from '../assets/sponsorC/Sponsor1.png';
+import sponsor30 from '../assets/sponsorC/Sponsor2.png';
+import sponsor31 from '../assets/sponsorC/Sponsor3.png';
+import sponsor32 from '../assets/sponsorC/Sponsor4.png';
+import sponsor33 from '../assets/sponsorC/Sponsor5.png';
+import sponsor34 from '../assets/sponsorC/Sponsor6.png';
+import sponsor35 from '../assets/sponsorC/Sponsor7.png';
+import sponsor36 from '../assets/sponsorC/Sponsor8.png';
+import sponsor37 from '../assets/sponsorC/Sponsor9.png';
+import sponsor38 from '../assets/sponsorC/Sponsor10.png';
+import sponsor39 from '../assets/sponsorC/Sponsor11.png';
+import sponsor40 from '../assets/sponsorC/Sponsor12.png';
+import sponsor41 from '../assets/sponsorC/Sponsor13.png';
+import sponsor42 from '../assets/sponsorC/Sponsor14.png';
+import sponsor43 from '../assets/sponsorC/Sponsor15.png';
+import sponsor44 from '../assets/sponsorC/Sponsor16.png';
+import sponsor45 from '../assets/sponsorC/Sponsor17.png';
+import sponsor46 from '../assets/sponsorC/Sponsor18.png';
+import sponsor47 from '../assets/sponsorC/Sponsor19.png';
+import sponsor48 from '../assets/sponsorC/Sponsor20.png';
+import sponsor49 from '../assets/sponsorC/Sponsor21.png';
+import sponsor50 from '../assets/sponsorC/Sponsor22.png';
+import sponsor51 from '../assets/sponsorC/Sponsor23.png';
+import sponsor52 from '../assets/sponsorC/Sponsor24.png';
+import sponsor53 from '../assets/sponsorC/Sponsor25.png';
+import sponsor54 from '../assets/sponsorC/Sponsor26.png';
+import sponsor55 from '../assets/sponsorC/Sponsor27.png';
+import sponsor56 from '../assets/sponsorC/Sponsor28.png';
+import sponsor57 from '../assets/sponsorC/Sponsor29.png';
+import sponsor58 from '../assets/sponsorC/Sponsor30.png';
+import sponsor59 from '../assets/sponsorC/Sponsor31.png';
+import sponsor60 from '../assets/sponsorC/Sponsor32.png';
+import sponsor61 from '../assets/sponsorC/Sponsor33.png';
+import sponsor62 from '../assets/sponsorC/Sponsor34.png';
+import sponsor63 from '../assets/sponsorC/Sponsor35.png';
+import sponsor64 from '../assets/sponsorC/Sponsor36.png';
+import sponsor65 from '../assets/sponsorC/Sponsor37.png';
+import sponsor66 from '../assets/sponsorC/Sponsor38.png';
+import sponsor67 from '../assets/sponsorC/Sponsor39.png';
+import sponsor68 from '../assets/sponsorC/Sponsor40.png';
+import sponsor69 from '../assets/sponsorC/Sponsor41.png';
+import sponsor70 from '../assets/sponsorC/Sponsor42.png';
+import sponsor71 from '../assets/sponsorC/Sponsor43.png';
+import sponsor72 from '../assets/sponsorC/Sponsor44.png';
+import sponsor73 from '../assets/sponsorC/Sponsor45.png';
+import sponsor74 from '../assets/sponsorC/Sponsor46.png';
+import sponsor75 from '../assets/sponsorC/Sponsor47.png';
+
+// Sfondo del sito
 import SfondoGlobale from '../assets/sfondo.png'; 
 
 const Sponsor = () => {
-  const sponsorData = {
-    gold: [
-      { id: 3, nome: "Officine Cantelmo", logo: sponsor2, sito: "https://www.officinecantelmo.it/" },
-      { id: 4, nome: "Leopizzi Antonio", logo: sponsor3, sito: "https://www.facebook.com/p/Ditta-Antonio-Leopizzi-Termoidraulico-100028127662321/" },
-      { id: 5, nome: "Clark", logo: sponsor4, sito: "https://clarksrl.it/" },
-    ],
-    silver: [
-      { id: 6, nome: "Da inserire", logo: "https://via.placeholder.com/200x100?text=Sport", sito: "#" },
-      { id: 7, nome: "Da inserire", logo: "https://via.placeholder.com/200x100?text=Ristorante", sito: "#" },
-      { id: 8, nome: "Da inserire", logo: "https://via.placeholder.com/200x100?text=Auto", sito: "#" },
-      { id: 9, nome: "Da inserire", logo: "https://via.placeholder.com/200x100?text=Edilizia", sito: "#" },
-    ]
-  };
+
+  const goldSponsors = [
+    { id: 1, logo: sponsor1 },
+    { id: 2, logo: sponsor2 },
+    { id: 3, logo: sponsor3 },
+    { id: 4, logo: sponsor4 },
+    { id: 5, logo: sponsor5 },
+    { id: 6, logo: sponsor6 },
+    { id: 7, logo: sponsor7 },
+    { id: 8, logo: sponsor8 },
+    { id: 9, logo: sponsor9 },
+    { id: 10, logo: sponsor10 },
+    { id: 11, logo: sponsor11 },
+    { id: 12, logo: sponsor12 },
+    { id: 13, logo: sponsor13 },
+  ];
+
+  const silverSponsors = [
+    { id: 101, logo: sponsor14 },
+    { id: 102, logo: sponsor15 },
+    { id: 103, logo: sponsor16 },
+    { id: 104, logo: sponsor17 },
+    { id: 105, logo: sponsor18 },
+    { id: 106, logo: sponsor19 },
+    { id: 107, logo: sponsor20 },
+    { id: 108, logo: sponsor21 },
+    { id: 109, logo: sponsor22 },
+    { id: 110, logo: sponsor23 },
+    { id: 111, logo: sponsor24 },
+    { id: 112, logo: sponsor25 },
+    { id: 113, logo: sponsor26 },
+    { id: 114, logo: sponsor27 },
+    { id: 115, logo: sponsor28 },
+  ];
+
+  const bronzeSponsors = [
+    { id: 201, logo: sponsor29 },
+    { id: 202, logo: sponsor30 },
+    { id: 203, logo: sponsor31 },
+    { id: 204, logo: sponsor32 },
+    { id: 205, logo: sponsor33 },
+    { id: 206, logo: sponsor34 },
+    { id: 207, logo: sponsor35 },
+    { id: 208, logo: sponsor36 },
+    { id: 209, logo: sponsor37 },
+    { id: 210, logo: sponsor38 },
+    { id: 211, logo: sponsor39 },
+    { id: 212, logo: sponsor40 },
+    { id: 213, logo: sponsor41 },
+    { id: 214, logo: sponsor42 },
+    { id: 215, logo: sponsor43 },
+    { id: 216, logo: sponsor44 },
+    { id: 217, logo: sponsor45 },
+    { id: 218, logo: sponsor46 },
+    { id: 219, logo: sponsor47 },
+    { id: 220, logo: sponsor48 },
+    { id: 221, logo: sponsor49 },
+    { id: 222, logo: sponsor50 },
+    { id: 223, logo: sponsor51 },
+    { id: 224, logo: sponsor52 },
+    { id: 225, logo: sponsor53 },
+    { id: 226, logo: sponsor54 },
+    { id: 227, logo: sponsor55 },
+    { id: 228, logo: sponsor56 },
+    { id: 229, logo: sponsor57 },
+    { id: 230, logo: sponsor58 },
+    { id: 231, logo: sponsor59 },
+    { id: 232, logo: sponsor60 },
+    { id: 233, logo: sponsor61 },
+    { id: 234, logo: sponsor62 },
+    { id: 235, logo: sponsor63 },
+    { id: 236, logo: sponsor64 },
+    { id: 237, logo: sponsor65 },
+    { id: 238, logo: sponsor66 },
+    { id: 239, logo: sponsor67 },
+    { id: 240, logo: sponsor68 },
+    { id: 241, logo: sponsor69 },
+    { id: 242, logo: sponsor70 },
+    { id: 243, logo: sponsor71 },
+    { id: 244, logo: sponsor72 },
+    { id: 245, logo: sponsor73 },
+    { id: 246, logo: sponsor74 },
+    { id: 247, logo: sponsor75 },
+  ];
 
   return (
-    /* Cambiato lo sfondo di base in grigio chiarissimo per far risaltare la foto luminosa */
     <div className="min-h-screen bg-slate-100 text-slate-900 font-sans relative overflow-hidden">
-      
-      {/* IMMAGINE DI SFONDO DIETRO TUTTO (Massima luminosità) */}
+
+      {/* IMMAGINE DI SFONDO GLOBALE */}
       <div className="absolute inset-0 z-0 bg-white">
         <img 
           src={SfondoGlobale} 
           alt="Podistica Parabita Sponsor Sfondo" 
           className="w-full h-full object-cover opacity-90 fixed-background" 
         />
-        {/* Sfumatura bianca leggerissima solo ai lati per ammorbidire lo scroll senza scurire il centro */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/20" />
       </div>
 
-      {/* Tutto il contenuto sopra lo sfondo luminoso */}
       <div className="relative z-10">
-        
-        {/* Header Sezione Sponsor - Adesso è chiaro e trasparente in stile vetro */}
+
+        {/* Header Sezione */}
         <section className="bg-white/70 backdrop-blur-md py-20 px-8 text-center relative overflow-hidden border-b border-slate-200">
           <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
           <div className="relative z-10 max-w-4xl mx-auto">
@@ -55,74 +199,102 @@ const Sponsor = () => {
           </div>
         </section>
 
-        <div className="max-w-7xl mx-auto px-8 py-20">
-          
-          {/* --- GOLD SPONSORS --- */}
-          <div className="mb-24">
-            <div className="flex items-center gap-4 mb-10 justify-center md:justify-start">
-              <div className="bg-orange-600 p-3 rounded-2xl text-white shadow-lg shadow-orange-600/20">
-                <Star size={24} fill="currentColor" />
-              </div>
-              <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900">Partner <span className="text-orange-600">Gold</span></h2>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {sponsorData.gold.map((s) => (
-                <a 
-                  key={s.id} 
-                  href={s.sito} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  /* Card bianche in vetro trasparente: fanno vedere lo sfondo sotto e risaltare il logo */
-                  className="group bg-white/80 backdrop-blur-md border border-slate-200/60 rounded-[2.5rem] p-8 flex flex-col items-center justify-center hover:border-orange-500/50 hover:bg-white hover:shadow-2xl hover:shadow-orange-600/10 transition-all duration-500"
-                >
-                  <div className="h-32 w-full flex items-center justify-center mb-6 bg-slate-50/50 p-4 rounded-2xl">
-                    <img 
-                      src={s.logo} 
-                      alt={s.nome} 
-                      className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-110" 
-                    />
-                  </div>
-                  <h4 className="font-black text-slate-400 group-hover:text-orange-600 uppercase tracking-widest text-[10px] transition-colors flex items-center gap-2">
-                    {s.nome} <ExternalLink size={12} />
-                  </h4>
-                </a>
-              ))}
-            </div>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
 
-          {/* --- SILVER SPONSORS --- */}
-          <div className="mb-20">
-            <div className="flex items-center gap-4 mb-10 justify-center md:justify-start">
-              <div className="bg-slate-200 text-slate-700 p-3 rounded-2xl">
-                <Handshake size={24} />
+          {/* --- 1. GOLD SPONSORS (Ingranditi, a 3 colonne, senza card e a colori) --- */}
+          <div className="mb-28">
+            <div className="flex items-center gap-4 mb-12 justify-center md:justify-start">
+              <div className="bg-amber-500 p-3 rounded-2xl text-white shadow-lg shadow-amber-500/25">
+                <Star size={26} fill="currentColor" />
               </div>
-              <h2 className="text-2xl font-black uppercase tracking-tighter text-slate-700">Sostenitori Ufficiali</h2>
+              <div>
+                <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900">
+                  Partner <span className="text-amber-500">Gold</span>
+                </h2>
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Top Sponsor Ufficiali</p>
+              </div>
             </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {sponsorData.silver.map((s) => (
-                <a 
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-center justify-items-center">
+              {goldSponsors.map((s) => (
+                <div 
                   key={s.id} 
-                  href={s.sito} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group bg-white/50 backdrop-blur-sm rounded-3xl p-8 h-40 flex items-center justify-center border border-slate-200/40 hover:bg-white hover:border-orange-500/20 transition-all duration-300 shadow-sm"
+                  className="h-44 md:h-48 w-full flex items-center justify-center p-2 transition-transform duration-300 hover:scale-110"
                 >
                   <img 
                     src={s.logo} 
-                    alt={s.nome} 
-                    className="max-h-20 w-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" 
+                    alt={`Sponsor ${s.id}`} 
+                    className="max-h-full max-w-full object-contain filter drop-shadow-sm" 
                   />
-                </a>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* --- CTA - TOTAL ORANGE --- */}
+          {/* --- 2. SILVER SPONSORS (Senza rettangoli e a colori) --- */}
+          <div className="mb-24">
+            <div className="flex items-center gap-4 mb-10 justify-center md:justify-start">
+              <div className="bg-slate-400 p-3 rounded-2xl text-white shadow-lg shadow-slate-400/20">
+                <Award size={24} />
+              </div>
+              <div>
+                <h2 className="text-2xl font-black uppercase tracking-tighter text-slate-800">
+                  Partner <span className="text-slate-500">Silver</span>
+                </h2>
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Sostenitori Ufficiali</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center">
+              {silverSponsors.map((s) => (
+                <div 
+                  key={s.id} 
+                  className="h-24 w-full flex items-center justify-center p-3 transition-transform duration-300 hover:scale-110"
+                >
+                  <img 
+                    src={s.logo} 
+                    alt={`Sponsor ${s.id}`} 
+                    className="max-h-full max-w-full object-contain filter drop-shadow-sm" 
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* --- 3. BRONZE SPONSORS (Senza rettangoli e a colori) --- */}
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-8 justify-center md:justify-start">
+              <div className="bg-amber-800/80 p-2.5 rounded-2xl text-white shadow-md shadow-amber-900/15">
+                <Shield size={22} />
+              </div>
+              <div>
+                <h2 className="text-xl font-black uppercase tracking-tighter text-amber-900/80">
+                  Partner <span className="text-amber-700">Bronze</span>
+                </h2>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Amici della Podistica</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 items-center justify-items-center">
+              {bronzeSponsors.map((s) => (
+                <div 
+                  key={s.id} 
+                  className="h-16 w-full flex items-center justify-center p-2 transition-transform duration-300 hover:scale-110"
+                >
+                  <img 
+                    src={s.logo} 
+                    alt={`Sponsor ${s.id}`} 
+                    className="max-h-full max-w-full object-contain filter drop-shadow-sm" 
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* --- BANNER CTA --- */}
           <div className="mt-28 bg-orange-600 rounded-[3rem] p-12 md:p-20 text-center text-white shadow-2xl shadow-orange-600/20 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-white/20 transition-colors duration-700"></div>
-            
+
             <div className="relative z-10">
               <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none">
                 Vuoi correre <br /> con noi?
@@ -143,7 +315,6 @@ const Sponsor = () => {
         </footer>
       </div>
 
-      {/* Blocco CSS per gestire il parallasse fisso su PC */}
       <style dangerouslySetInnerHTML={{__html: `
         @media (min-width: 1024px) {
           .fixed-background {

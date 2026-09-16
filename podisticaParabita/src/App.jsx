@@ -18,6 +18,7 @@ import Album from './pages/Album';
 
 
 
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -48,6 +49,7 @@ function App() {
         <Route path="/curraturi" element={<CurraturiPage />} /> 
         <Route path="/miglioriMomenti" element={<MiglioriMomenti />} />
         <Route path="/album" element={<Album />} />
+        <Route path="/sponsor" element={<Sponsor />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
 
