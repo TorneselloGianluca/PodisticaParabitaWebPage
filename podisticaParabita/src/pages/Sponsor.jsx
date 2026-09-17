@@ -201,7 +201,7 @@ const Sponsor = () => {
 
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
 
-          {/* --- 1. GOLD SPONSORS (Ingranditi, a 3 colonne, senza card e a colori) --- */}
+          {/* --- 1. GOLD SPONSORS --- */}
           <div className="mb-28">
             <div className="flex items-center gap-4 mb-12 justify-center md:justify-start">
               <div className="bg-amber-500 p-3 rounded-2xl text-white shadow-lg shadow-amber-500/25">
@@ -215,23 +215,23 @@ const Sponsor = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-center justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 items-center justify-items-center">
               {goldSponsors.map((s) => (
                 <div 
                   key={s.id} 
-                  className="h-44 md:h-48 w-full flex items-center justify-center p-2 transition-transform duration-300 hover:scale-110"
+                  className="h-56 md:h-60 w-full flex items-center justify-center p-3 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-125 hover:z-20"
                 >
                   <img 
                     src={s.logo} 
                     alt={`Sponsor ${s.id}`} 
-                    className="max-h-full max-w-full object-contain filter drop-shadow-sm" 
+                    className="max-h-full max-w-full object-contain filter drop-shadow-sm group-hover:drop-shadow-xl transition-all duration-300" 
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* --- 2. SILVER SPONSORS (Senza rettangoli e a colori) --- */}
+          {/* --- 2. SILVER SPONSORS --- */}
           <div className="mb-24">
             <div className="flex items-center gap-4 mb-10 justify-center md:justify-start">
               <div className="bg-slate-400 p-3 rounded-2xl text-white shadow-lg shadow-slate-400/20">
@@ -245,23 +245,23 @@ const Sponsor = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 items-center justify-items-center">
               {silverSponsors.map((s) => (
                 <div 
                   key={s.id} 
-                  className="h-24 w-full flex items-center justify-center p-3 transition-transform duration-300 hover:scale-110"
+                  className="h-30 w-full flex items-center justify-center p-3 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-125 hover:z-20"
                 >
                   <img 
                     src={s.logo} 
                     alt={`Sponsor ${s.id}`} 
-                    className="max-h-full max-w-full object-contain filter drop-shadow-sm" 
+                    className="max-h-full max-w-full object-contain filter drop-shadow-sm group-hover:drop-shadow-lg transition-all duration-300" 
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* --- 3. BRONZE SPONSORS (Senza rettangoli e a colori) --- */}
+          {/* --- 3. BRONZE SPONSORS --- */}
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-8 justify-center md:justify-start">
               <div className="bg-amber-800/80 p-2.5 rounded-2xl text-white shadow-md shadow-amber-900/15">
@@ -275,16 +275,16 @@ const Sponsor = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 items-center justify-items-center">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-8 items-center justify-items-center">
               {bronzeSponsors.map((s) => (
                 <div 
                   key={s.id} 
-                  className="h-16 w-full flex items-center justify-center p-2 transition-transform duration-300 hover:scale-110"
+                  className="h-20 w-full flex items-center justify-center p-2 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-125 hover:z-20"
                 >
                   <img 
                     src={s.logo} 
                     alt={`Sponsor ${s.id}`} 
-                    className="max-h-full max-w-full object-contain filter drop-shadow-sm" 
+                    className="max-h-full max-w-full object-contain filter drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300" 
                   />
                 </div>
               ))}

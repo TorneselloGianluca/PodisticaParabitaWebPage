@@ -1,6 +1,11 @@
 import React from 'react';
 import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
 
+import veneri from '../assets/logoveneri.png';
+import lecce from '../assets/lecce.webp';
+import parabita from '../assets/parabita.jpg';
+import castro from '../assets/castro.jpg';
+
 // IMPORTA IL TUO PDF
 import CalendarioPDF from '../assets/calendario.pdf';
 
@@ -12,32 +17,32 @@ const ProssimeGare = () => {
   const gareData = [
     {
       id: 1,
-      titolo: "9^ Urban Trail Leuca",
-      data: "2026-05-24",
-      luogo: "Santa Maria di Leuca, LE",
+      titolo: "15^ Scalata delle Veneri",
+      data: "2026-09-27",
+      luogo: "Parabita, LE",
       ora: "09:00",
-      tipo: "11,6 km",
-      immagine: "https://www.hdsalento.com/wp-content/uploads/2021/02/03122017-DJI_0184-1024x599.jpg",
+      tipo: "10,5 km",
+      immagine: parabita,
       iscrizioniAperte: true
     },
     {
       id: 2,
-      titolo: "5^ 34 Passo di Serena",
-      data: "2026-05-31",
-      luogo: "Galugnano, LE",
+      titolo: "2^ Corri a Castro",
+      data: "2026-10-4",
+      luogo: "Castro, LE",
       ora: "08:30",
-      tipo: "9,9km",
-      immagine: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Galugnano_%28LE%29.JPG?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=original",
+      tipo: "16km",
+      immagine: castro,
       iscrizioniAperte: true
     },
     {
       id: 3,
-      titolo: "14^ Trofeo Podistica unione dei comuni",
-      data: "2026-06-02",
-      luogo: "Melissano, LE",
+      titolo: "Lecce Run 2026",
+      data: "2026-10-11",
+      luogo: "Lecce, LE",
       ora: "08:30",
-      tipo: "9,6km",
-      immagine: "https://www.summerinitaly.com/images/photos/travel_guide/3784.jpg",
+      tipo: "10km",
+      immagine: lecce,
       iscrizioniAperte: true
     }
   ];
