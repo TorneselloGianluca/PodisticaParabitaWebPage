@@ -1,7 +1,7 @@
 import React from 'react';
 import { Star, Award, Shield, ArrowRight } from 'lucide-react';
 
-//import sponsor A
+//import sponsor A (Gold)
 import sponsor1 from '../assets/sponsorA/Sponsor1.png';
 import sponsor2 from '../assets/sponsorA/Sponsor2.png';
 import sponsor3 from '../assets/sponsorA/Sponsor3.png';
@@ -16,7 +16,7 @@ import sponsor11 from '../assets/sponsorA/Sponsor11.png';
 import sponsor12 from '../assets/sponsorA/Sponsor12.png';
 import sponsor13 from '../assets/sponsorA/Sponsor13.png';
 
-//import sponsor B
+//import sponsor B (Silver)
 import sponsor14 from '../assets/sponsorB/Sponsor1.png';
 import sponsor15 from '../assets/sponsorB/Sponsor2.png';
 import sponsor16 from '../assets/sponsorB/Sponsor3.png';
@@ -33,7 +33,7 @@ import sponsor26 from '../assets/sponsorB/Sponsor13.png';
 import sponsor27 from '../assets/sponsorB/Sponsor14.png';
 import sponsor28 from '../assets/sponsorB/Sponsor15.png';
 
-//import sponsor C
+//import sponsor C (Bronze)
 import sponsor29 from '../assets/sponsorC/Sponsor1.png';
 import sponsor30 from '../assets/sponsorC/Sponsor2.png';
 import sponsor31 from '../assets/sponsorC/Sponsor3.png';
@@ -201,7 +201,7 @@ const Sponsor = () => {
 
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
 
-          {/* --- 1. GOLD SPONSORS --- */}
+          {/* --- 1. GOLD SPONSORS (Bordo ORO aderente solo alla foto) --- */}
           <div className="mb-28">
             <div className="flex items-center gap-4 mb-12 justify-center md:justify-start">
               <div className="bg-amber-500 p-3 rounded-2xl text-white shadow-lg shadow-amber-500/25">
@@ -219,20 +219,20 @@ const Sponsor = () => {
               {goldSponsors.map((s) => (
                 <div 
                   key={s.id} 
-                  className="h-56 md:h-60 w-full flex items-center justify-center p-3 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-125 hover:z-20"
+                  className="h-56 md:h-60 w-full flex items-center justify-center p-2 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-110 hover:z-20"
                 >
                   <img 
                     src={s.logo} 
                     alt={`Sponsor ${s.id}`} 
-                    className="max-h-full max-w-full object-contain filter drop-shadow-sm group-hover:drop-shadow-xl transition-all duration-300" 
+                    className="max-h-full max-w-full object-contain p-3 rounded-2xl border-2 border-amber-400 bg-white/75 shadow-md shadow-amber-500/15 group-hover:border-amber-500 group-hover:shadow-xl group-hover:shadow-amber-500/30 transition-all duration-300" 
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* --- 2. SILVER SPONSORS --- */}
-          <div className="mb-24">
+          {/* --- 2. SILVER SPONSORS (Bordo ARGENTO aderente solo alla foto) --- */}
+          <div className="mb-28">
             <div className="flex items-center gap-4 mb-10 justify-center md:justify-start">
               <div className="bg-slate-400 p-3 rounded-2xl text-white shadow-lg shadow-slate-400/20">
                 <Award size={24} />
@@ -245,23 +245,23 @@ const Sponsor = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 items-center justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-10 items-center justify-items-center">
               {silverSponsors.map((s) => (
                 <div 
                   key={s.id} 
-                  className="h-30 w-full flex items-center justify-center p-3 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-125 hover:z-20"
+                  className="h-36 md:h-40 w-full flex items-center justify-center p-2 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-110 hover:z-20"
                 >
                   <img 
                     src={s.logo} 
                     alt={`Sponsor ${s.id}`} 
-                    className="max-h-full max-w-full object-contain filter drop-shadow-sm group-hover:drop-shadow-lg transition-all duration-300" 
+                    className="max-h-full max-w-full object-contain p-2.5 rounded-xl border-2 border-slate-300 bg-white/75 shadow-sm shadow-slate-400/15 group-hover:border-slate-400 group-hover:shadow-lg group-hover:shadow-slate-400/25 transition-all duration-300" 
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* --- 3. BRONZE SPONSORS --- */}
+          {/* --- 3. BRONZE SPONSORS (Bordo BRONZO aderente solo alla foto) --- */}
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-8 justify-center md:justify-start">
               <div className="bg-amber-800/80 p-2.5 rounded-2xl text-white shadow-md shadow-amber-900/15">
@@ -275,16 +275,16 @@ const Sponsor = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-8 items-center justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center">
               {bronzeSponsors.map((s) => (
                 <div 
                   key={s.id} 
-                  className="h-20 w-full flex items-center justify-center p-2 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-125 hover:z-20"
+                  className="h-24 md:h-28 w-full flex items-center justify-center p-1.5 relative cursor-pointer group transition-all duration-300 ease-out hover:scale-110 hover:z-20"
                 >
                   <img 
                     src={s.logo} 
                     alt={`Sponsor ${s.id}`} 
-                    className="max-h-full max-w-full object-contain filter drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300" 
+                    className="max-h-full max-w-full object-contain p-2 rounded-lg border border-amber-700/60 bg-white/75 shadow-xs group-hover:border-amber-700 group-hover:shadow-md group-hover:shadow-amber-900/20 transition-all duration-300" 
                   />
                 </div>
               ))}
@@ -302,9 +302,12 @@ const Sponsor = () => {
               <p className="mb-10 text-orange-50 font-medium max-w-xl mx-auto opacity-90">
                 Diventa partner della Podistica Parabita e dai visibilità alla tua azienda durante i nostri eventi.
               </p>
-              <button className="bg-slate-900 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white hover:text-orange-600 transition-all flex items-center gap-4 mx-auto text-sm shadow-xl transform active:scale-95">
+              <a 
+                href="mailto:podisticaparabita@gmail.com?subject=Richiesta%20Informazioni%20Sponsorizzazione%20-%20Podistica%20Parabita&body=Salve%2C%0A%0ASono%20interessato%20a%20diventare%20sponsor%20per%20la%20Podistica%20Parabita.%20Vorrei%20ricevere%20maggiori%20informazioni%20sui%20pacchetti%20di%20partnership.%0A%0ACordiali%20saluti"
+                className="inline-flex items-center gap-4 bg-slate-900 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white hover:text-orange-600 transition-all text-sm shadow-xl transform active:scale-95"
+              >
                 Diventa Sponsor <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
 
