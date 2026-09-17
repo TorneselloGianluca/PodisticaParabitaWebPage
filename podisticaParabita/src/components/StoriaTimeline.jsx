@@ -1,38 +1,44 @@
 import React from 'react';
-import { Calendar, Award, Flag, Users } from 'lucide-react';
+import { Users, Flag, Award, Trophy, Calendar } from 'lucide-react';
 
 import sfondo from '../assets/sfondo.png'; 
 
 const StoriaTimeline = () => {
 
-  // COSTANTE AUTOMATICA: Gestisci i testi direttamente da qui
   const storiaData = [
     {
       id: 1,
       anno: "1998",
-      titolo: "La Nascita dell'ASD",
-      descrizione: "Un gruppo di amici uniti dalla passione per l'atletica leggera decide di fondare la Podistica Parabita, ponendo la prima pietra di una storia fatta di chilometri, sudore e amicizia.",
+      titolo: "I Primi Passi",
+      descrizione: "L'associazione muove i suoi primi storici passi nel panorama podistico pugliese, iniziando a raccogliere appassionati e atleti locali uniti dalla passione per la corsa.",
       icona: <Users size={20} />
     },
     {
       id: 2,
       anno: "2005",
-      titolo: "Prima Edizione Scalata delle Veneri",
-      descrizione: "Nasce la gara simbolo del nostro territorio. Un percorso selettivo e affascinante che attira fin da subito centinaia di atleti da tutta la regione, diventando una classica del podismo salentino.",
+      titolo: "1ª Scalata delle Veneri",
+      descrizione: "Nasce la prima storica edizione della Scalata delle Veneri, la gara simbolo della società corsa su un percorso misto che attraversa il centro storico e la macchia mediterranea fino al Parco Archeologico.",
       icona: <Flag size={20} />
     },
     {
       id: 3,
-      anno: "2018",
-      titolo: "Riconoscimento Regionale Fidal",
-      descrizione: "Grazie ai risultati agonistici e all'impeccabile organizzazione degli eventi, la società viene premiata come una delle realtà più attive e solide del panorama Fidal pugliese.",
+      anno: "10 Dic 2007",
+      titolo: "Riconoscimento CONI",
+      descrizione: "Viene ufficializzata l'iscrizione formale dell'Associazione Sportiva Dilettantistica Podistica Parabita all'interno del Registro Nazionale del CONI, sancendo lo status ufficiale della società.",
       icona: <Award size={20} />
     },
     {
       id: 4,
-      anno: "2026",
-      titolo: "Generazione di Campioni",
-      descrizione: "Oggi la Podistica Parabita conta decine di tesserati, un reparto Walking in forte crescita e atleti capaci di piazzare tempi straordinari nelle maratone internazionali più prestigiose.",
+      anno: "2019",
+      titolo: "20ª Maratonina Salento D'Amare",
+      descrizione: "La società organizza la ventesima edizione della prestigiosa Maratonina Salento D'Amare, consolidando l'impegno ultraventennale nella promozione di grandi eventi podistici sul territorio.",
+      icona: <Trophy size={20} />
+    },
+    {
+      id: 5,
+      anno: "27 Set 2026",
+      titolo: "15ª Scalata delle Veneri",
+      descrizione: "Si tiene la quindicesima edizione della Scalata delle Veneri, una ricorrenza speciale che rinnova la tradizione e celebra il cammino degli atleti nel cuore del Salento.",
       icona: <Calendar size={20} />
     }
   ];
@@ -40,14 +46,14 @@ const StoriaTimeline = () => {
   return (
     <section className="relative min-h-screen w-full bg-slate-950 py-24 overflow-hidden font-sans">
       
-      {/* SFONDO IN TRASPARENZA (Ottimizzato per maggiore visibilità) */}
+      {/* SFONDO IN TRASPARENZA */}
       <div className="absolute inset-0 z-0">
         <img 
           src={sfondo} 
           alt="Podistica Parabita Storia Sfondo" 
-          className="w-full h-full object-cover opacity-40 fixed-background" /* Alzata opacità a 40 per mostrare bene l'immagine */
+          className="w-full h-full object-cover opacity-40 fixed-background"
         />
-        {/* Filtro sfumato bilanciato per dare contrasto senza oscurare lo sfondo */}
+        {/* Filtro sfumato bilanciato */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/50 to-slate-950/90" />
       </div>
 
@@ -88,11 +94,11 @@ const StoriaTimeline = () => {
                   {evento.icona}
                 </div>
 
-                {/* SCHEDA DELL'EVENTO STORICO (SOLO TESTO) */}
+                {/* SCHEDA DELL'EVENTO STORICO */}
                 <div className="w-full lg:w-1/2 pl-12 lg:pl-0 lg:px-12">
                   <div className="bg-slate-900/85 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 md:p-8 shadow-2xl transition-all duration-300 hover:border-orange-500/40 group">
                     
-                    {/* Header della scheda con Anno e Titolo in linea */}
+                    {/* Header della scheda con Titolo e Data/Anno */}
                     <div className="flex items-center justify-between gap-4 mb-3 border-b border-white/5 pb-3">
                       <h3 className="text-xl md:text-2xl font-black uppercase text-white tracking-tight group-hover:text-orange-500 transition-colors">
                         {evento.titolo}
@@ -118,7 +124,7 @@ const StoriaTimeline = () => {
 
       </div>
 
-      {/* Stile CSS inline per bloccare lo sfondo in parallasse */}
+      {/* Stile CSS inline per parallasse desktop */}
       <style dangerouslySetInnerHTML={{__html: `
         @media (min-width: 1024px) {
           .fixed-background {
